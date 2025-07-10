@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Random Spotify Song</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+      background: #f0f0f0;
+    }
+
+    img {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    #player {
+      margin-top: 30px;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(100);
+        opacity: 1;
+      }
+    }
+
+    .pop-frame {
+      animation: popIn 0.4s ease-out;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click the image to hear a surprise song 🎶</h2>
+  <img src="your-image.jpg" alt="Click Me" onclick="showRandomSong()" />
+
+  <div id="player"></div>
+
+  <script>
+    const songs = [
+      "https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC",
+      "https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp",
+      "https://open.spotify.com/embed/track/7GhIk7Il098yCjg4BQjzvb",
+      "https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b"
+    ];
+
+    function showRandomSong() {
+      const randomIndex = Math.floor(Math.random() * songs.length);
+      const embedUrl = songs[randomIndex];
+
+      const player = document.getElementById("player");
+      player.innerHTML = "";
+
+      setTimeout(() => {
+        player.innerHTML = `
+          <iframe src="${embedUrl}" width="800" height="80" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy" class="pop-frame">
+          </iframe>
+        `;
+      }, 10);
+    }
+  </script>
+
+</body>
+</html>

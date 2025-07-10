@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moodify</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 40px; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    #results img { width: 100px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Moodify 🎧</h1>
+  <p>Select your mood:</p>
+  <button onclick="getPlaylist('happy')">😊 Happy</button>
+  <button onclick="getPlaylist('chill')">😌 Chill</button>
+  <button onclick="getPlaylist('energetic')">⚡ Energetic</button>
+  <div id="results"></div>
+
+  <script>
+    const clientId = 'baaa552127d5449f939f3f002265c0d2';
+    const clientSecret = '603ddb30d6c64227a03dd6dfe00304c0';
+
+    const getToken = async () => {
+      const result = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+        },
+        body: 'grant_type=client_credentials'
+      });
+      const data = await result.json();
+      return data.access_token;
+    };
+
+    const getPlaylist = async (mood) => {
+      const token = await getToken();
+
+      const result = await fetch(`https://api.spotify.com/v1/search?q=${mood}&type=playlist&limit=1`, {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      const data = await result.json();
+      const playlist = data.playlists.items[0];
+
+      document.getElementById('results').innerHTML = `
+        <h3>${playlist.name}</h3>
+        <a href="${playlist.external_urls.spotify}" target="_blank">
+          <img src="${playlist.images[0].url}" alt="Playlist Cover" />
+        </a>
+      `;
+    };
+  </script>
+</body>
+</html>
