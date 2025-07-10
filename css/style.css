@@ -23,6 +23,7 @@
       font-family: 'Arial', sans-serif;
       display: flex;
       min-height: 100vh;
+      padding-bottom: 60px;
       
       
     }
@@ -74,10 +75,10 @@
       color: var(--font-color);
       font-family: var(--font-body);
       text-decoration: none;
-      font-size: 1rem;
-      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      padding: 0.3rem 0 0.3rem 0.5rem ;
       display: block;
-      border-left: 3px solid transparent;
+      
     }
 
     .sidebar .nav:hover {
@@ -85,15 +86,30 @@
       background-color: #2e2e2e;
       padding-left: 0.5rem;
     }
+
+    .current_nav{
+      background-color: #2e2e2e;
+      padding-left: 0.5rem;
+      border-left: 3px solid var(--accent-color);
+      
+    }
+
+  
+
     .sidebar .countries{
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--font-color);
       font-family: var(--font-body);
       text-decoration: none;
       display: block;
       border-left: 3px solid transparent;
       margin: 5px 0;
+      
     }
+
+  .sidebar .countries:hover{
+    color: var(--accent-color);
+  }
 
     /* Main content */
     .main {
@@ -250,6 +266,13 @@
 
     /*myPLaylist.html(start)*/
 
+
+    .countriesTitle{
+      color: var(--font-color);
+      font-family: var(--font-body);
+      font-size: 13px ;
+    }
+
     .myPlaylistGrid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -258,10 +281,29 @@
     }
 
     .playlist-countries{
-      background-color: #1ED760;
+      position: relative;
       width: 200px;
       height: 200px;
       border-radius: 10px;
+    }
+     .playlist-countries img:hover{
+      filter: brightness(70%);
+      filter: blur(1px);
+    }
+    .playButton{
+      position: absolute;
+      left: 10px;
+      bottom: -30px;
+      z-index: 1000;
+      display: none;
+    }
+   
+    .playButton p{
+      font-size: 40px;
+      color: var(--accent-color);
+    }
+    .playlist-countries:hover .playButton{
+      display: block;
     }
 
     .myPlaylistGrid-container button{
@@ -288,12 +330,13 @@
       width: 100%;
       border-radius: 10px;
     }
+   
 
 .tracks {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -320,11 +363,71 @@
 
 
 
+.musicPlayer{
+  display: none;
+  position: fixed;
+      bottom: 20px;
+      width: 78%;
+      height: 80px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      margin-top: 250px;
+      z-index: 1000;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.musicPlayer.show {
+  display: block;
+  opacity: 1;
+}
+
     /*myPLaylist.html(end)*/
+
+    /*SongRecommendation.html(start)*/
+       .songRecommendation-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .songRecommendations{
+      background-color: #FFD700;
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    .songRecommendation-container button{
+         margin: 30px 45px;
+    width: 110px;
+    border-radius: 30px;
+      border: none;
+      background-color:#383838;
+      color: white;
+      font-weight: normal;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .songRecommendation-container button:hover {
+      background-color: var(--accent-color);
+      color: #131313;
+    }
+    /*SongRecommendation.html(End)*/
     
 
     
     
+
 
     /* Responsive layout */
     @media (max-width: 768px) {
@@ -335,6 +438,7 @@
         height: auto;
         overflow-x: auto;
         white-space: nowrap;
+        display: none;
       }
 
       .sidebar h2 {

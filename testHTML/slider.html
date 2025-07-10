@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Autoplay Image Slider</title>
+  <style>
+    .slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  margin: 40px auto;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  scroll-snap-align: center;
+  border-radius: 12px;
+}
+.spacer {
+  flex: 0 0 50%; /* Adjust based on how wide your container is */
+}
+.slide.active {
+  transform: scale(1.25);
+  z-index: 2;
+}
+
+.slider-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-buttons button {
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  background: #1ed760;
+  color: white;
+  margin: 0 5px;
+  border-radius: 8px;
+}
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider" id="slider">
+    <div class="spacer"></div>
+    <img src="MusicGenrePics/eeee.jpg" class="slide" alt="Image 1" />
+    <img src="MusicGenrePics/ffff.jpg" class="slide" alt="Image 2" />
+    <img src="MusicGenrePics/pop.jpg" class="slide" alt="Image 3" />
+     <img src="MusicGenrePics/wee.jpg" class="slide" alt="Image 4" />
+      <img src="MusicGenrePics/wwww.jpg" class="slide" alt="Image 5" />
+       <img src="MusicGenrePics/qqqqq.jpg" class="slide" alt="Image 6" />
+        <img src="MusicGenrePics/Rap.jpg" class="slide" alt="Image 7" />
+        <img src="MusicGenrePics/Rap.jpg" class="slide" alt="Image 7" />
+        <img src="MusicGenrePics/Rap.jpg" class="slide" alt="Image 7" />
+        <img src="MusicGenrePics/Rap.jpg" class="slide" alt="Image 7" />
+        <img src="MusicGenrePics/Rap.jpg" class="slide" alt="Image 7" />
+        <img src="MusicGenrePics/Rap.jpg" class="slide" alt="Image 7" />
+    <!-- Add more as needed -->
+      <div class="spacer"></div>
+  </div>
+  <div class="slider-buttons">
+    <button id="prevBtn">⟨</button>
+    <button id="nextBtn">⟩</button>
+  </div>
+</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("slider");
+  const slides = slider.querySelectorAll(".slide");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const slideWidth = slides[0].offsetWidth + 20; // image width + gap
+
+  // Scroll left/right
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: slideWidth, behavior: "smooth" });
+  });
+
+  // Highlight center image
+  slider.addEventListener("scroll", () => {
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    const centerX = slider.scrollLeft + slider.offsetWidth / 2;
+
+    slides.forEach(slide => {
+      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const distance = Math.abs(centerX - slideCenter);
+
+      if (distance < slide.offsetWidth / 2) {
+        slide.classList.add("active");
+      }
+    });
+  });
+});
+  </script>
+
+</body>
+</html>
