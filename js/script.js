@@ -119,3 +119,30 @@ document.addEventListener("DOMContentLoaded", () => {
 //SongRecommendations
 
 });
+
+
+// Open overlay
+document.querySelectorAll(".flip-button").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    let id = ["overlay-pop","overlay-rock","overlay-rnb","overlay-rap","overlay-other"][index];
+    document.getElementById(id).style.display = "flex";
+  });
+});
+
+// Close overlay
+document.querySelectorAll(".overlay .close").forEach(closeBtn => {
+  closeBtn.addEventListener("click", () => {
+    closeBtn.parentElement.parentElement.style.display = "none";
+  });
+});
+
+// Close when clicking outside box
+document.querySelectorAll(".overlay").forEach(ov => {
+  ov.addEventListener("click", (e) => {
+    if(e.target === ov) ov.style.display = "none";
+  });
+});
+
+
+
+

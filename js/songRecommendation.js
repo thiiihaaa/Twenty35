@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://open.spotify.com/embed/track/16bo9rjhuBfM6mUFKpSdRJ?utm_source=generator",
     ],
     Melancholic: [
-       "https://open.spotify.com/embed/track/1mXVgsBdtIVeCLJnSnmtdV?utm_source=generator",
-      "https://open.spotify.com/embed/track/0DGh73t9eaZA3X3ZXHf4Qe?utm_source=generator",
+      "https://open.spotify.com/embed/track/5UXJzLFdBn6u9FJTCnoHrH?utm_source=generator",
+      "https://open.spotify.com/embed/track/4q3biaQQoADspV16lbsfPH?utm_source=generator",
       "https://open.spotify.com/embed/track/5gguiSurLMRJwKPTGbEj5r?utm_source=generator",
       "https://open.spotify.com/embed/track/74h6p7El7eyV6HKvTefpIJ?utm_source=generator",
       "https://open.spotify.com/embed/track/4SjXHwsZevaRo1M2EQgHf6?utm_source=generator",
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://open.spotify.com/embed/track/6DRZmJa38MaMNthwG3fCBD?utm_source=generator",
       "https://open.spotify.com/embed/track/16bo9rjhuBfM6mUFKpSdRJ?utm_source=generator"
     ],
+    
     Energetic: [
        "https://open.spotify.com/embed/track/1mXVgsBdtIVeCLJnSnmtdV?utm_source=generator",
       "https://open.spotify.com/embed/track/0DGh73t9eaZA3X3ZXHf4Qe?utm_source=generator",
@@ -83,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
-  // 🎯 Attach click listeners to buttons
+  //  Attach click listeners to buttons
  buttons.forEach(button => {
     button.addEventListener("click", () => {
       const mood = button.dataset.moods;
