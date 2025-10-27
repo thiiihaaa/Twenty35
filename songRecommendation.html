@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Twenty35 Music</title>
+  <title>Twenty35 Music (Song Recommendations)</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/10b4bd48d5.js" crossorigin="anonymous"></script>
 </head>
@@ -11,7 +11,14 @@
 
   <!-- Sidebar Navigation -->
   <div class="sidebar">
-    <h2>Twenty<span style="color:  #1ED760;">35</span> </h2>
+    <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+
+    <select id="language-select" onchange="setLanguage(this.value)">
+  <option value="en">English</option>
+  <option value="ja">日本語</option>
+  <option value="my">မြန်မာ</option>
+</select>
+
     <a class="nav"  href="index.html"> Home</a>
     <a class="nav" href="favoriteartists.html"> My Fav Artists</a>
     <a class="nav current_nav" href="songRecommendation.html"> Song Recommendations</a>
@@ -67,6 +74,7 @@
 </div>
 
 <script src="js/songRecommendation.js"></script>
+<script src="js/lang.js"></script>
 </body>
 </html>
 

@@ -123,26 +123,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Open overlay
 document.querySelectorAll(".flip-button").forEach((btn, index) => {
+  const ids = ["overlay-pop", "overlay-rock", "overlay-rnb", "overlay-rap", "overlay-other"];
   btn.addEventListener("click", () => {
-    let id = ["overlay-pop","overlay-rock","overlay-rnb","overlay-rap","overlay-other"][index];
-    document.getElementById(id).style.display = "flex";
+    const id = ids[index];
+    const overlay = document.getElementById(id);
+    if (overlay) overlay.style.display = "flex";
   });
 });
 
-// Close overlay
+// Close overlay when clicking the close button
 document.querySelectorAll(".overlay .close").forEach(closeBtn => {
   closeBtn.addEventListener("click", () => {
-    closeBtn.parentElement.parentElement.style.display = "none";
+    const overlay = closeBtn.closest(".overlay");
+    if (overlay) overlay.style.display = "none";
   });
 });
 
-// Close when clicking outside box
-document.querySelectorAll(".overlay").forEach(ov => {
-  ov.addEventListener("click", (e) => {
-    if(e.target === ov) ov.style.display = "none";
+// Close overlay when clicking outside the content box
+document.querySelectorAll(".overlay").forEach(overlay => {
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
   });
 });
 
 
 
-
+  

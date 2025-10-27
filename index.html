@@ -4,45 +4,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Twenty35 Music</title>
+  <title>Twenty35 Music (home)</title>
   <link rel="stylesheet" href="css/style.css">
+ <!-- Google Fonts Import -->
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <!-- Sidebar Navigation -->
   <div class="sidebar">
-    <h2>Twenty<span style="color:  #1ED760;">35</span> </h2>
-    <a class="nav current_nav" href="index.html"> Home</a>
-    <a class="nav" href="favoriteartists.html"> My Fav Artists</a>
-    <a class="nav" href="songRecommendation.html"> Song Recommendations</a>
-    <a class="nav" href="myPlaylist.html">My Playlists</a>
+    <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+    
+     <select id="language-select" onchange="setLanguage(this.value)">
+  <option value="en">English</option>
+  <option value="ja">日本語</option>
+  <option value="my">မြန်မာ</option>
+</select>
+
+    <a data-i18n="nav1" class="nav current_nav" href="index.html"> Home</a>
+    <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
+    <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
+    <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a>
 
   </div>
 
   <!-- Main Content -->
-  <div class="main">
-    <div class="title">Welcome to Twenty<span style="color:  #1ED760;">35</span></div>
-    <h4> <span style="color:#efefef;">
-        このサイトは、私の好きな曲やアーティストを紹介するために作成しました。また、音楽が好きな方におすすめの楽曲を提案できるような構成にしています。どうぞよろしくお願いいたします。</span></h4>
+  <div class="main"> 
+    <div class="title" data-i18n="title">Welcome to Twenty<span style="color:  #1ED760;">35</span></div>
+    <h4 data-i18n="intro"> 
+        I created this website to introduce my favorite songs and artists.It’s also designed to recommend great music to fellow music lovers. Thank you for visiting!</h4>
 
-    <h1>Music Genres</h1>
+    <h1 data-i18n="genresTitle">Music Genres</h1>
     <div class="grid-container">
       <div>
         <div class="flip-card">
           <div class="flip-inner">
             <div class="flip-front"><img src="MusicGenrePics/1x/pop.png" alt="pop"></div>
             <div class="flip-back">
-              <p>ポップミュージック（Pop Music）は、大衆に向けて作られた音楽のジャンルで、1950年代から1960年代にかけて発展しました。
-                主にアメリカとイギリスで広まり、ラジオやテレビ、音楽チャートで頻繁に流れるようなキャッチーで商業的な楽曲が多いです。
-
-                ポップミュージックは、ロック、ダンス、ヒップホップ、R&Bなど様々な音楽ジャンルから影響を受けています。リズムやメロディが特徴であり、歌詞も親しみやすい内容が多いです。
-
-                代表的なアーティストには、マイケル・ジャクソン、マドンナ、ビヨンセ、テイラー・スウィフトなどがいます。</p>
+              <p data-i18n="genredesc1" >Pop music is a genre created for a wide audience, and it began to flourish between the 1950s and 1960s.
+It spread mainly in the United States and the United Kingdom, featuring catchy and commercial songs that often appear on radio, TV, and music charts.
+Pop music draws influence from various genres like rock, dance, hip-hop, and R&B.
+It’s known for its rhythm and melody, with lyrics that are easy to relate to and enjoy.
+Famous pop artists include Michael Jackson, Madonna, Beyoncé, and Taylor Swift.
+</p>
             </div>
           </div>
         </div>
-        <button class="flip-button">Pop</button>
+        <button data-i18n="genre1" class="flip-button">Pop</button>
       </div>
 
       <div>
@@ -50,16 +64,14 @@
           <div class="flip-inner">
             <div class="flip-front"><img src="MusicGenrePics/1x/rock.png" alt="Rock"></div>
             <div class="flip-back">
-              <p>ロックミュージック (Rock
-                Music)音楽は、1950年代にアメリカで誕生し、エレキギター、ベース、ドラムが主な楽器として使われる音楽ジャンルです。エネルギッシュで反抗的な精神を持ち、若者文化に大きな影響を与えました。
-
-                1960年代には、ビートルズやローリング・ストーンズなどのバンドが登場し、ロックは世界的な人気を博しました。日本でも、1960年代後半から1970年代にかけて、ロックバンドが活躍し始めました。
-
-                代表的なロックバンドには、ビートルズ、ローリング・ストーンズ、クイーン、ニルヴァーナなどがいます。</p>
+              <p data-i18n="genredesc2" >Rock music is a genre that originated in the United States during the 1950s. It typically features electric guitar, bass, and drums as its main instruments. Known for its energetic and rebellious spirit, rock music had a major influence on youth culture.
+In the 1960s, bands like The Beatles and The Rolling Stones emerged, helping rock music gain worldwide popularity. In Japan as well, rock bands began to thrive from the late 1960s through the 1970s.
+Some of the most iconic rock bands include The Beatles, The Rolling Stones, Queen, and Nirvana.
+</p>
             </div>
           </div>
         </div>
-        <button class="flip-button">Rock</button>
+        <button data-i18n="genre2" class="flip-button">Rock</button>
       </div>
 
       <div>
@@ -67,16 +79,15 @@
           <div class="flip-inner">
             <div class="flip-front"><img src="MusicGenrePics/1x/rnb.png" alt="RnB"></div>
             <div class="flip-back">
-              <p>
-                R&B（リズム・アンド・ブルース）は、1940年代にアメリカのアフリカ系アメリカ人コミュニティから発展した音楽ジャンルです。当初はブルースやジャズの影響を受けた音楽スタイルでしたが、時代とともにソウル、ファンク、ヒップホップなど多くの音楽スタイルに影響を与えました。
-
-                R&Bの特徴として、感情豊かなボーカル、強いリズム、複雑なメロディーラインがあります。歌詞はしばしば恋愛や生活の喜びと苦しみをテーマにしています。
-
-                代表的なアーティストには、アレサ・フランクリン、マーヴィン・ゲイ、マイケル・ジャクソン、ビヨンセなどがいます。</p>
+              <p data-i18n="genredesc3" >
+                R&B (Rhythm and Blues) is a music genre that developed in the 1940s from African American communities in the United States. It was originally influenced by blues and jazz, but over time it shaped and was shaped by other styles like soul, funk, and hip-hop.
+R&B is known for its emotionally expressive vocals, strong rhythms, and complex melodies. The lyrics often explore themes of love, joy, and the struggles of everyday life.
+Notable R&B artists include Aretha Franklin, Marvin Gaye, Michael Jackson, and Beyoncé.
+</p>
             </div>
           </div>
         </div>
-        <button class="flip-button">R&B</button>
+        <button data-i18n="genre3" class="flip-button">R&B</button>
       </div>
 
       <div>
@@ -84,15 +95,14 @@
           <div class="flip-inner">
             <div class="flip-front"><img src="MusicGenrePics/1x/rap.png" alt="Rap"></div>
             <div class="flip-back">
-              <p>ラップ（Rap）は、1970年代にアメリカのニューヨーク市で発展した音楽ジャンルです。特にヒップホップ文化の一部として誕生し、リズムに合わせて歌詞をリズミカルに話す、または「ラップ」するのが特徴です。
-
-                ラップの歌詞は、社会問題や個人的な経験、ライフスタイル、ストリートカルチャーに関連する内容が多く、強いメッセージ性を持っています。ビートやリズムが重要な要素であり、DJが作るビートやターンテーブル技術も大きな役割を果たしています。
-
-                代表的なラップアーティストには、トゥーパック・シャクール、ノトーリアス・B.I.G、ジェイ・Z、エミネム、カニエ・ウェストなどがいます。</p>
+              <p data-i18n="genredesc4" >Rap emerged in 1970s New York as part of hip-hop culture. 
+                It’s defined by rhythmic speech or “rapping” over beats. Lyrics often address social issues, personal experiences, 
+                and street life. Beats and DJ techniques like turntables play a key role. Famous rappers include Tupac Shakur, 
+                Notorious B.I.G., Jay-Z, Eminem, and Kanye West.</p>
             </div>
           </div>
         </div>
-        <button class="flip-button">Rap</button>
+        <button data-i18n="genre4" class="flip-button">Rap</button>
       </div>
 
       <div>
@@ -100,25 +110,16 @@
           <div class="flip-inner">
             <div class="flip-front"><img src="MusicGenrePics/1x/others.png" alt="othergeeres"></div>
             <div class="flip-back">
-              <p>ジャズ (Jazz) <br>
-                ジャズは、20世紀初頭にアメリカで発展した音楽ジャンルです。即興演奏と複雑なリズム、ハーモニーが特徴です。代表的なアーティストには、ルイ・アームストロング、デューク・エリントン、マイルス・デイビスがいます。<br><br>
-
-                クラシック (Classical) <br>
-                クラシック音楽は、17世紀から19世紀にかけてヨーロッパで発展しました。オーケストラやピアノ、弦楽四重奏などが主要な楽器です。代表的な作曲家には、ベートーヴェン、モーツァルト、バッハがいます。<br><br>
-
-                エレクトロニック (Electronic) <br>
-                エレクトロニック音楽は、電子楽器やコンピューターを用いて作られる音楽です。ダンスミュージックやテクノ、ハウスなど多くのサブジャンルがあります。代表的なアーティストには、ダフト・パンク、デヴィッド・ゲッタ、カルヴィン・ハリスがいます。<br><br>
-
-                カントリー (Country) <br>
-                カントリーミュージックは、アメリカ南部で発展した音楽ジャンルで、ギターやバンジョー、フィドルが主要な楽器です。歌詞はしばしば日常生活や愛、失恋について語られます。代表的なアーティストには、ジョニー・キャッシュ、ドリー・パートン、テイラー・スウィフトがいます。<br><br>
-
-                メタル (Metal) <br>
-                メタル音楽は、ロックから発展したジャンルで、重厚なギターリフと強力なドラムが特徴です。サブジャンルにはヘヴィメタル、デスメタル、ブラックメタルなどがあります。代表的なバンドには、メタリカ、アイアン・メイデン、ブラック・サバスがいます。
+              <p data-i18n="genredesc5" >(Jazz)<br> Jazz is a music genre that developed in the early 20th century in the United States. It is characterized by improvisation, complex rhythms, and harmonies. Notable artists include Louis Armstrong, Duke Ellington, and Miles Davis.<br><br
+                (Classical)<br>Classical music developed in Europe between the 17th and 19th centuries. It features orchestras, piano, and string quartets as its main instruments. Famous composers include Beethoven, Mozart, and Bach.<br><br>
+                (Electronic)Electronic music is created using electronic instruments and computers. It includes many subgenres such as dance music, techno, and house. Well-known artists include Daft Punk, David Guetta, and Calvin Harris.<br><br>
+                (Country)<br>Country music originated in the southern United States. It typically features instruments like guitar, banjo, and fiddle. Lyrics often explore everyday life, love, and heartbreak. Notable artists include Johnny Cash, Dolly Parton, and Taylor Swift.<br><br>
+                (Metal)<br>Metal music is a genre that evolved from rock, known for heavy guitar riffs and powerful drums. Subgenres include heavy metal, death metal, and black metal. Famous bands include Metallica, Iron Maiden, and Black Sabbath.
               </p>
             </div>
           </div>
         </div>
-        <button class="flip-button">Other genres</button>
+        <button data-i18n="genre5" class="flip-button">Other genres</button>
       </div>
     </div>
 
@@ -181,5 +182,6 @@
 
 </body>
 <script src="js/script.js"></script>
+<script src="js/lang.js"></script>
 
 </html>
