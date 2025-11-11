@@ -137,7 +137,7 @@ myplaylistPageTitle:'<span style="font-family: \'Kaisei Tokumin\', serif;"> <spa
 my: {
   title: 'Twenty<span style="color: #1ED760;">35</span> <span style="font-family: \'Noto Serif Myanmar\', serif;">မှ ကြိုဆိုပါတယ်</span>',
   intro: '<span style="font-family: \'Padauk\', serif;">ကျွန်တော့်ရဲ့အကြိုက်ဆုံးသီချင်းတွေနဲ့ အနုပညာရှင်တွေကို မိတ်ဆက်ဖို့အတွက် ဒီဝက်ဘ်ဆိုက်ကို ဖန်တီးထားပါတယ်။ ဂီတကိုချစ်သူတွေအတွက် အကြိုက်ဆုံးသီချင်းတွေကို အကြံပြုနိုင်အောင် ဖန်တီးထားပါတယ်။ လာရောက်ကြည့်ရှုတဲ့အတွက် ကျေးဇူးတင်ပါတယ်။</span>',
-  genresTitle: '<span style="font-family: \'Noto Serif Myanmar\', serif;">ဂီတအမျိုးအစားများ</span',
+  genresTitle: '<span style="font-family: \'Noto Serif Myanmar\', serif;">ဂီတအမျိုးအစားများ</span>',
   //nav start//
   nav1:'<span style="font-family: \'Noto Serif Myanmar\', serif;">ပင်မစာမျက်နှာ</span',
   nav2:'<span style="font-family: \'Noto Serif Myanmar\', serif;">အနှစ်သက်ဆုံးအနုပညာရှင်များ</span',
@@ -191,10 +191,11 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 });
 
 // Update font class
-const body = document.body;
-body.classList.remove("font-en", "font-ja", "font-my");
-body.classList.add(`font-${lang}`);
-}
+// const body = document.body;
+// body.classList.remove("font-en", "font-ja", "font-my");
+// body.classList.add(`font-${lang}`);
+ }
+
 
 // Set language and persist it
 function setLanguage(lang) {

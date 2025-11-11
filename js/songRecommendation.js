@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".songRecommendation button");
+  const recommendationBlocks = document.querySelectorAll(".songRecommendation");
   const musicPlayer = document.querySelector(".musicPlayer");
 
   // 🎧 Mood-based playlist collections
@@ -83,9 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
-  // 🎯 Attach click listeners to buttons
- buttons.forEach(button => {
-    button.addEventListener("click", () => {
+  //  Attach click listeners to buttons
+  recommendationBlocks.forEach(block => {
+    block.addEventListener("click", () => {
+      const button = block.querySelector("button");
       const mood = button.dataset.moods;
       const playlistArray = spotifyEmbeds[mood];
 
@@ -103,10 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
           </iframe>`;
 
-        //  Reveal the music player
         musicPlayer.classList.add("show");
       } else {
-        musicPlayer.innerHTML = `<p>No playlists found for <strong>${mood}</strong>. </p>`;
+        musicPlayer.innerHTML = `<p>No playlists found for <strong>${mood}</strong>.</p>`;
         musicPlayer.classList.add("show");
       }
     });

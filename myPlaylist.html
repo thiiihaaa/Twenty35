@@ -12,11 +12,6 @@
   <!-- Sidebar Navigation -->
   <div class="sidebar">
     <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
-     <select id="language-select" onchange="setLanguage(this.value)">
-  <option value="en">English</option>
-  <option value="ja">日本語</option>
-  <option value="my">မြန်မာ</option>
-</select>
 
     <a data-i18n="nav1" class="nav"  href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
@@ -32,6 +27,26 @@
 
   <!-- Main Content -->
   <div class="main">
+    
+    <div class="tobBar">
+  <div id="modebutton">
+    <div class="toggle-switch" id="modeSwitch">
+      <div class="slider"></div>
+    </div>
+    <div class="toggle-label" id="modeLabel">Dark Mode</div>
+  </div>
+
+  <div id="langSwitch">
+   <select id="language-select" onchange="setLanguage(this.value)">
+      <option value="en">&#x1F310;English</option>
+      <option value="ja">&#x1F310;日本語</option>
+      <option value="my">&#x1F310;မြန်မာ</option>
+    </select>
+  </div>
+
+  <div id="profile">👤</div>
+</div>
+
      <div data-i18n="myplaylistPageTitle" class="title"><span style="color:  #1ED760;">My </span>Playlists</div> 
      <div class="countriesTitle"></div>
 

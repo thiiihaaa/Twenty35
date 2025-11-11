@@ -113,12 +113,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+//TopBar JS(mode switch button)start
+// const switchBtn = document.getElementById('modeSwitch');
+ //   const label = document.getElementById('modeLabel');
+ //   let isDark = true;
+
+  //  switchBtn.addEventListener('click', () => {
+ //     isDark = !isDark;
+  //    document.body.classList.toggle('light-mode', isDark);
+  //    switchBtn.classList.toggle('active', isDark);
+  //    label.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+ //   });
+
+  //dark/light mode start
+
+  const switchBtn = document.getElementById('modeSwitch');
+const label = document.getElementById('modeLabel');
+
+// Load saved mode from localStorage
+let isDark = localStorage.getItem('theme') !== 'light'; // default to dark if not set
+
+// Apply saved mode on page load
+document.body.classList.toggle('light-mode', !isDark);
+switchBtn.classList.toggle('active', !isDark);
+label.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+
+// Handle toggle
+switchBtn.addEventListener('click', () => {
+  isDark = !isDark;
+
+  // Toggle class
+  document.body.classList.toggle('light-mode', !isDark);
+  switchBtn.classList.toggle('active', !isDark);
+  label.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+
+  // Save to localStorage
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+//TopBar JS(mode switch button)end
+
 // main.js
 
 
 //SongRecommendations
 
 });
+
 
 
 // Open overlay

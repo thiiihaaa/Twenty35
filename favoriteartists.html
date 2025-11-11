@@ -12,14 +12,34 @@
   <!-- Sidebar Navigation -->
   <div class="sidebar">
     <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
-    <a class="nav" href="index.html"> Home</a>
-    <a class="nav current_nav" href="favartists.html"> My Fav Artists</a>
-    <a class="nav" href="songRecommendation.html"> Song Recommendations</a>
-    <a class="nav" href="myPlaylist.html">My Playlists</a> 
+    <a data-i18n="nav1" class="nav" href="index.html"> Home</a>
+    <a data-i18n="nav2" class="nav current_nav" href="favartists.html"> My Fav Artists</a>
+    <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
+    <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a> 
   </div>
 
   <!-- Main Content -->
   <div class="main">
+
+    <div class="tobBar">
+  <div id="modebutton">
+    <div class="toggle-switch" id="modeSwitch">
+      <div class="slider"></div>
+    </div>
+    <div class="toggle-label" id="modeLabel">Dark Mode</div>
+  </div>
+
+  <div id="langSwitch">
+    <select id="language-select" onchange="setLanguage(this.value)">
+      <option value="en">&#x1F310;English</option>
+      <option value="ja">&#x1F310;日本語</option>
+      <option value="my">&#x1F310;မြန်မာ</option>
+    </select>
+  </div>
+
+  <div id="profile">👤</div>
+</div>
+
     <div class="title"><span style="color:  #1ED760;">My </span>Favourite Artists</div> 
 
     <div class="artistContainer">
@@ -81,7 +101,8 @@
 
 
 
-
+<script src="js/script.js""></script>
 <script src="js/favartist.js" defer></script>
+<script src="js/lang.js"></script>
 </body>
 </html>
