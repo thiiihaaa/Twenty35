@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@800&display=swap');
+
+
+#chatIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    z-index: 1000;
+    color: white;
+    font-size: 30px;
+  }
+
+  #chatOverlay {
+    display: none;
+    position: fixed;
+    width: 350px;
+    height: 450px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+ /* Glass effect background */
+  background: rgba(255, 255, 255, 0.1);
+  /* light transparent layer */
+  backdrop-filter: blur(8px);
+  /* blur behind overlay */
+  -webkit-backdrop-filter: blur(8px);
+  /* Safari support */
+    z-index: 999;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #chatHeader {     
+    background-color: #00cc66;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Shrikhand', serif;
+  
+  }
+
+  #chatMessages {
+    color: aliceblue;
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  #chatInput {
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+
+  #chatInput input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+
+  #chatInput button {
+    padding: 10px;
+    background-color: #00cc66;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }

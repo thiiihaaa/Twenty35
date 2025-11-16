@@ -80,7 +80,7 @@ body {
   background-color: #a1a1a1;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.3s;
 }
 
 .slider {
@@ -783,11 +783,10 @@ body {
   .sidebar {
     position: relative;
     width: 100%;
-    flex-direction: row;
     height: auto;
     overflow-x: auto;
     white-space: nowrap;
-    display: none;
+    
   }
 
   .sidebar h2 {
@@ -800,6 +799,7 @@ body {
   }
 
   .main {
+    z-index: 99;
     margin-left: 0;
     padding: 1rem;
   }
