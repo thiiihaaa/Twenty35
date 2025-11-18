@@ -1,4 +1,3 @@
-const OPENAI_API_KEY = "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";
 const BOT_NAME = "Twenty35";
 
 const chatIcon = document.getElementById('chatIcon');
@@ -78,11 +77,10 @@ For each recommendation, ALWAYS include:
 5. YouTube search link
 Give sweet messages for users, depend on user's mood.`;
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("/.netlify/functions/openai-proxy", {
       method: "POST",
       headers: {
         "Content-Type":"application/json",
-        "Authorization":`Bearer ${OPENAI_API_KEY}`
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
@@ -137,4 +135,4 @@ function startThinkingAnimation(id) {
 
 // --- Event listeners ---
 sendBtn.addEventListener('click', sendMessage);
-userInput.addEventListener('keypress', e=>{ if(e.key==="Enter") sendMessage(); });
+userInput.addEventListener('keypress', e=>{ if(e.key==="Enter") sendMessage(); });                                                                                                               
