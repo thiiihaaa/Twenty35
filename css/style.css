@@ -72,6 +72,15 @@ body {
   cursor: pointer;
 }
 
+.hamburger {
+ display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--font-color);
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
 /* Toggle Switch */
 .toggle-switch {
   position: relative;
@@ -762,6 +771,12 @@ body {
   color: #131313;
 }
 
+footer{
+  text-align:center; 
+  font-size:0.8em; 
+  color:#e7e7e7;
+}
+
 /*SongRecommendation.html(End)*/
 
 @keyframes float {
@@ -780,33 +795,54 @@ body {
 
 /* Responsive layout */
 @media (max-width: 768px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow-x: auto;
-    white-space: nowrap;
-    
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
   }
 
-  .sidebar h2 {
+  .tobBar{
     display: none;
   }
 
-  .sidebar a {
-    display: inline-block;
-    margin-right: 1rem;
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -70%; /* Start hidden off-screen to the left */
+    width: 70%;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar.active {
+    left: 0; /* Slide in from the left */
   }
 
   .main {
-    z-index: 99;
     margin-left: 0;
-    padding: 1rem;
+    position: relative;
+    z-index: 1001;
+    width: 100%;
+    transition: transform 0.3s ease;
   }
 
-  .title {
-    font-size: 1.4rem;
+  .main.slide {
+    transform: translateX(70%); /* Slide right without shrinking */
   }
+
+
+
+  .hamburger {
+    display: block;
+  }
+
+  #mobileExtras{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 5px;
+  }
+
 }
 
 /*light mode*/
@@ -980,4 +1016,8 @@ body.light-mode .songRecommendation-container button:hover {
 body.light-mode .musicPlayer {
   background-color: #f0f0f0;
   color: var(--font-color-light);
+}
+
+body.light-mode footer{
+  color: #000000;
 }

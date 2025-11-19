@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Twenty35 Music (home)</title>
   <link rel="stylesheet" href="css/style.css">
- <!-- Google Fonts Import -->
 <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +18,7 @@
 <body>
 
   <!-- Sidebar Navigation -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <h2 class="lightmode-font"><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
     
     <a data-i18n="nav1" class="nav current_nav" href="index.html"> Home</a>
@@ -27,12 +26,15 @@
     <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
     <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a>
 
+    <div id="mobileExtras"></div>
+
   </div>
 
   <!-- Main Content -->
   <div class="main"> 
-
-    <div class="tobBar">
+<div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="tobBar" id="topBar">
+      
   <div id="modebutton">
     <div class="toggle-switch" id="modeSwitch">
       <div class="slider"></div>
@@ -141,6 +143,10 @@ Notable R&B artists include Aretha Franklin, Marvin Gaye, Michael Jackson, and B
       </div>
     </div>
 
+<footer>
+  &copy; 2026 Twenty35 by thiha. All rights reserved.
+</footer>
+
   </div>
 
   <!-- Overlay Boxes -->
@@ -195,8 +201,6 @@ Notable R&B artists include Aretha Franklin, Marvin Gaye, Michael Jackson, and B
      encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
-
-
 
 </body>
 <script src="js/script.js"></script>

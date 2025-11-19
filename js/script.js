@@ -189,6 +189,44 @@ document.querySelectorAll(".overlay").forEach(overlay => {
   });
 });
 
+//hambuger menu for smart phone start
+const hamburger = document.getElementById('hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const main = document.querySelector('.main');
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    main.classList.toggle('slide');
+  });
+  //hambuger menu for smart phone end
+
+
+
+  function moveTopBarElements() {
+  const isMobile = window.innerWidth <= 768; 
+  const modeButton = document.getElementById("modebutton");
+  const langSwitch = document.getElementById("langSwitch");
+  const profile = document.getElementById("profile");
+  const mobileExtras = document.getElementById("mobileExtras");
+  const topBar = document.getElementById("topBar");
+
+  if (isMobile) {
+    // Move to sidebar
+    if (!mobileExtras.contains(modeButton)) mobileExtras.appendChild(modeButton);
+    if (!mobileExtras.contains(langSwitch)) mobileExtras.appendChild(langSwitch);
+    if (!mobileExtras.contains(profile)) mobileExtras.appendChild(profile);
+  } else {
+    // Move back to topBar
+    if (!topBar.contains(modeButton)) topBar.appendChild(modeButton);
+    if (!topBar.contains(langSwitch)) topBar.appendChild(langSwitch);
+    if (!topBar.contains(profile)) topBar.appendChild(profile);
+  }
+}
+
+// Trigger on load and resize
+window.addEventListener("load", moveTopBarElements);
+window.addEventListener("resize", moveTopBarElements);
+
 
 
   

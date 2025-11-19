@@ -25,19 +25,22 @@
 
 
   <!-- Sidebar Navigation -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
 
     <a data-i18n="nav1" class="nav"  href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
     <a data-i18n="nav3" class="nav current_nav" href="songRecommendation.html"> Song Recommendations</a>
     <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a> 
+     <div id="mobileExtras"></div>
+     
   </div>
 
   <!-- Main Content -->
   <div class="main">
+    <div class="hamburger" id="hamburger">&#9776;</div>
 
-    <div class="tobBar">
+    <div class="tobBar" id="tobBar">
   <div id="modebutton">
     <div class="toggle-switch" id="modeSwitch">
       <div class="slider"></div>
@@ -99,8 +102,8 @@
 
  <div class="musicPlayer"></div> 
 
-
 </div>
+
 
 <script src="js/script.js"></script>
 <script src="js/songRecommendation.js"></script>
