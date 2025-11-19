@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     cursor: grab;
-    z-index: 1000;
+    z-index: 10000;
     color: white;
     font-size: 30px;
   }
@@ -25,7 +25,7 @@
   -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     border-radius: 10px;
-    z-index: 999;
+    z-index: 10000;
     flex-direction: column;
     overflow: hidden;
   }
