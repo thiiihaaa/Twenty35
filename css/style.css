@@ -284,14 +284,7 @@ body {
   color: var(--accent-color);
 }
 
-
-
-
-
 /* Toggle Switch Styles */
-
-
-
 
 /* Main content */
 
@@ -804,10 +797,12 @@ footer{
     display: none;
   }
 
+  /*
+
   .sidebar {
     position: fixed;
     top: 0;
-    left: -70%; /* Start hidden off-screen to the left */
+    left: -70%; 
     width: 70%;
     height: 100vh;
     transition: left 0.3s ease;
@@ -815,7 +810,7 @@ footer{
   }
 
   .sidebar.active {
-    left: 0; /* Slide in from the left */
+    left: 0; /
   }
 
   .main {
@@ -830,9 +825,47 @@ footer{
 
 
   .main.slide {
-    transform: translateX(70%); /* Slide right without shrinking */
-  }
+    transform: translateX(70%); 
+  } */
 
+  .body-wrapped {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .sidebar ,.main{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+       width: 100vw;
+  /* try dynamic units first, then fallbacks */
+  height: 100dvh;
+  height: 100svh;
+  height: -webkit-fill-available;
+  height: 100vh;
+  overflow-y: auto;
+
+      transition: transform 0.5s ease;
+    }
+
+    .main {
+      box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.457);
+      z-index: 2;
+      margin-left: 0;
+      box-shadow: -4px 0px 11px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -4px 0px 11px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 0px 11px 0px rgba(0,0,0,0.75);
+    }
+
+    .sidebar {
+      z-index: 1;
+    }
+
+    .slide-out {
+      transform: translateX(70vw); /* Slide within viewport */
+    }
  
 
  .hamburger {

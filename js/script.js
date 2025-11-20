@@ -190,7 +190,7 @@ document.querySelectorAll(".overlay").forEach(overlay => {
 });
 
 //hambuger menu for smart phone start
-const hamburger = document.getElementById('hamburger');
+/* const hamburger = document.getElementById('hamburger');
   const sidebar = document.querySelector('.sidebar');
   const main = document.querySelector('.main');
 
@@ -198,7 +198,39 @@ const hamburger = document.getElementById('hamburger');
     sidebar.classList.toggle('active');
     main.classList.toggle('slide');
   });
-  //hambuger menu for smart phone end
+  //hambuger menu for smart phone end */
+
+  const layer1 = document.querySelector('.main');
+  const menuToggle = document.getElementById('hamburger');
+
+  // Toggle on hamburger click
+  menuToggle.addEventListener('click', () => {
+    layer1.classList.toggle('slide-out');
+  });
+
+  // Touch gesture detection
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+    if (swipeDistance > 50) {
+      // Swipe right
+      layer1.classList.add('slide-out');
+    } else if (swipeDistance < -50) {
+      // Swipe left
+      layer1.classList.remove('slide-out');
+    }
+  }
 
 
 
