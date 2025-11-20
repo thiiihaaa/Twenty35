@@ -846,7 +846,6 @@ footer{
   height: -webkit-fill-available;
   height: 100vh;
   overflow-y: auto;
-
       transition: transform 0.5s ease;
     }
 
@@ -859,8 +858,20 @@ footer{
 -moz-box-shadow: -4px 0px 11px 0px rgba(0,0,0,0.75);
     }
 
+    .main.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+
     .sidebar {
       z-index: 1;
+    }
+
+    .sidebar .nav{
+      border-bottom: dotted 1px #dddddd30;
     }
 
     .slide-out {
