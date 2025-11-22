@@ -1,0 +1,209 @@
+const BOT_NAME = "Twenty35";
+    const sendBtn = document.getElementById('send');
+    const userInput = document.getElementById('input');
+    const chatMessages = document.getElementById('chatMessages');
+    const historyList = document.getElementById('historyList');
+    const quickSuggestionsContainer = document.getElementById('quickSuggestions');
+    const suggestBtns = quickSuggestionsContainer.querySelectorAll('.suggest-btn');
+
+
+    // Overlays
+    const overlayHistory = document.getElementById('overlayHistory');
+    const overlayGuide = document.getElementById('overlayGuide');
+
+    // Quick Chat Suggestions
+    const quickSuggestions = [
+        "I'm feeling happy, recommend some upbeat songs!",
+        "What are some relaxing Japanese songs?",
+        "Suggest some Burmese folk music.",
+        "I like rock music, any English band recommendations?",
+        "Recommend songs for studying.",
+        "What are some good K-pop songs right now?",
+        "I need some motivational music.",
+        "Suggest songs for a workout.",
+        "What's a good song for a road trip?",
+        "Recommend some instrumental music.",
+        "I'm in the mood for some sad songs.",
+        "Suggest some classical music.",
+        "What's popular in Burmese music charts?",
+        "Give me some chill lo-fi recommendations."
+    ];
+
+    // Overlay Event Listeners
+    document.getElementById('commentIcon').onclick = ()=>{
+        overlayHistory.style.display = 'flex';
+    };
+    document.getElementById('userGuide').onclick = ()=>{
+        overlayGuide.style.display = 'flex';
+    };
+
+    function closeHistory(){ overlayHistory.style.display = 'none'; }
+    function closeGuide(){ overlayGuide.style.display = 'none'; }
+
+    // Function to display random quick suggestions
+    function displayRandomSuggestions() {
+        // Shuffle the array to get random suggestions
+        const shuffled = [...quickSuggestions].sort(() => 0.5 - Math.random());
+        // Take the first 4 for display
+        const selectedSuggestions = shuffled.slice(0, 4);
+
+        suggestBtns.forEach((btn, index) => {
+            if (selectedSuggestions[index]) {
+                btn.textContent = selectedSuggestions[index];
+                btn.style.display = 'block'; 
+            } else {
+                btn.style.display = 'none'; 
+            }
+        });
+        
+        if (chatMessages.children.length <= 1) { 
+             quickSuggestionsContainer.style.display = 'grid';
+        } else {
+             quickSuggestionsContainer.style.display = 'none';
+        }
+    }
+
+    // Function to handle clicking a suggestion box
+    function sendSuggestedMessage(element) {
+        userInput.value = element.textContent;
+        sendMessage();
+    }
+
+
+    // INITIALIZATION: Display suggestions, then add the welcome message.
+    if(!chatMessages.hasChildNodes()){
+        displayRandomSuggestions(); 
+        addMessage(BOT_NAME, "Hi! Tell me your mood or favorite songs, and I’ll recommend music — English / Japanese / Burmese!", 'bot-message');
+    }
+
+
+    // Core functions
+    async function sendMessage(){
+        const message = userInput.value.trim();
+        if(!message) return;
+        
+        quickSuggestionsContainer.style.display = 'none';
+
+        addMessage("You", message, 'user-message');
+        saveHistory(`You: ${message}`);
+        userInput.value = "";
+
+        const loadingId = addMessage(BOT_NAME, "Thinking", 'bot-message');
+        const dotsInterval = startThinkingAnimation(loadingId);
+
+        try{
+
+   const systemMessage = `You are a music recommendation chatbot named Twenty35.
+Always respond in the same language as the user input (English / Japanese / Burmese).
+Recommend 3–5 songs based on the user's mood, feelings, or favorite artists.
+For each recommendation, ALWAYS include:
+1. Song title
+2. Artist name
+3. Spotify search link
+4. Apple Music search link
+5. YouTube search link
+Give sweet messages for users, depend on user's mood.
+IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Example: [Spotify Link](http://spotify.com/search?q=song) and include a newline after each song/link grouping.`;
+
+            const response = await fetch("/.netlify/functions/openai-proxy", {
+                method: "POST",
+                headers: { "Content-Type":"application/json" },
+                body: JSON.stringify({
+                    model: "gpt-4o-mini",
+                    messages: [
+                        { role: "system", content: systemMessage },
+                        { role: "user", content: message }
+                    ]
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const botMessage = data.choices[0].message.content; 
+            
+            clearInterval(dotsInterval);
+            updateMessage(loadingId, botMessage);
+            saveHistory(`${BOT_NAME}: ${botMessage}`);
+
+        }catch(err){
+            console.error("Fetch error:", err);
+            clearInterval(dotsInterval);
+            updateMessage(loadingId, "Oops! Something went wrong. The AI service may be unavailable.");
+        }
+    }
+
+    // --- MODIFIED FUNCTION ---
+    function addMessage(sender, text, className){
+        // 1. Convert Markdown links to HTML links
+        let htmlText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+        
+        // 2. Split lines based on newline or start of a numbered list item
+        const lines = htmlText.split(/\n|(?=\d+\.)/);
+        
+        // 3. Trim, filter empty, wrap in <p> tags, and join
+        const formattedText = lines
+            .map(l => l.trim())
+            .filter(l => l)
+            .map(l => `<p>${l}</p>`)
+            .join("");
+
+        const id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`; 
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.id = id;
+        messageDiv.classList.add(className); 
+        
+        // 4. Insert the formatted HTML
+        messageDiv.innerHTML = `<strong>${sender}:</strong>${formattedText}`; 
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return id;
+    }
+
+    // --- MODIFIED FUNCTION ---
+    function updateMessage(id, text){
+        const msgDiv = document.getElementById(id);
+        if(!msgDiv) return;
+        
+        // 1. Convert Markdown links to HTML links
+        let htmlText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+        
+        // 2. Split lines based on newline or start of a numbered list item
+        const lines = htmlText.split(/\n|(?=\d+\.)/);
+        
+        // 3. Trim, filter empty, wrap in <p> tags, and join
+        const formattedText = lines
+            .map(l => l.trim())
+            .filter(l => l)
+            .map(l => `<p>${l}</p>`)
+            .join("");
+
+        // 4. Update the content
+        msgDiv.innerHTML = `<strong>${BOT_NAME}:</strong>${formattedText}`;
+    }
+
+    function startThinkingAnimation(id){
+        let dots = 0;
+        return setInterval(()=>{
+            const msg = document.getElementById(id);
+            if(!msg) return;
+            dots = (dots+1)%4;
+            msg.innerHTML = `<strong>${BOT_NAME}:</strong> Thinking${'.'.repeat(dots)}`; 
+        },500);
+    }
+
+    function saveHistory(msg){
+        const div = document.createElement('div');
+        div.textContent = msg;
+        div.style.marginBottom = '8px';
+        historyList.prepend(div); 
+    }
+
+    sendBtn.onclick = sendMessage;
+    userInput.addEventListener('keypress', e=>{ 
+        if(e.key==='Enter') sendMessage(); 
+    });
