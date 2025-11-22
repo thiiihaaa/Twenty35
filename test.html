@@ -319,10 +319,7 @@
             }
         });
         
-      
-        
-        // The quickSuggestionsContainer should be visible ONLY at the start.
-        if (chatMessages.children.length <= 1) { // 1 for the initial welcome message
+        if (chatMessages.children.length <= 1) { 
              quickSuggestionsContainer.style.display = 'grid';
         } else {
              quickSuggestionsContainer.style.display = 'none';
@@ -336,7 +333,7 @@
     }
 
 
-    // 1. **FIX: INITIALIZATION** - Call displayRandomSuggestions() BEFORE the first welcome message is added.
+    // INITIALIZATION: Display suggestions, then add the welcome message.
     if(!chatMessages.hasChildNodes()){
         displayRandomSuggestions(); 
         addMessage(BOT_NAME, "Hi! Tell me your mood or favorite songs, and I’ll recommend music — English / Japanese / Burmese!", 'bot-message');
@@ -348,7 +345,6 @@
         const message = userInput.value.trim();
         if(!message) return;
         
-        // 2. **FIX: HIDING** - Hide suggestions immediately when the user sends a message.
         quickSuggestionsContainer.style.display = 'none';
 
         addMessage("You", message, 'user-message');
@@ -362,7 +358,7 @@
             const systemMessage = `You are a music recommendation chatbot named Twenty35.
 Always respond in the same language as the user input (English / Japanese / Burmese).
 Recommend 3–5 songs based on the user's mood or input.
-For each song, include hypothetical links for Spotify, Apple Music, and YouTube (e.g., "[Spotify Link]").`;
+IMPORTANT: Format the links using standard Markdown syntax: [Link Name](URL). Example: [Spotify Link](http://spotify.com/track).`;
 
             const response = await fetch("/.netlify/functions/openai-proxy", {
                 method: "POST",
@@ -394,23 +390,55 @@ For each song, include hypothetical links for Spotify, Apple Music, and YouTube 
         }
     }
 
+    // --- MODIFIED FUNCTION ---
     function addMessage(sender, text, className){
-        let id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`; 
+        // 1. Convert Markdown links to HTML links
+        let htmlText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+        
+        // 2. Split lines based on newline or start of a numbered list item
+        const lines = htmlText.split(/\n|(?=\d+\.)/);
+        
+        // 3. Trim, filter empty, wrap in <p> tags, and join
+        const formattedText = lines
+            .map(l => l.trim())
+            .filter(l => l)
+            .map(l => `<p>${l}</p>`)
+            .join("");
+
+        const id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`; 
         
         const messageDiv = document.createElement('div');
         messageDiv.id = id;
-        messageDiv.classList.add(className);
-        messageDiv.innerHTML = `<strong>${sender}:</strong> <p>${text}</p>`;
+        messageDiv.classList.add(className); 
+        
+        // 4. Insert the formatted HTML
+        messageDiv.innerHTML = `<strong>${sender}:</strong>${formattedText}`; 
         
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
         return id;
     }
 
+    // --- MODIFIED FUNCTION ---
     function updateMessage(id, text){
-        const msg = document.getElementById(id);
-        if(!msg) return;
-        msg.innerHTML = `<strong>${BOT_NAME}:</strong> <p>${text}</p>`;
+        const msgDiv = document.getElementById(id);
+        if(!msgDiv) return;
+        
+        // 1. Convert Markdown links to HTML links
+        let htmlText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+        
+        // 2. Split lines based on newline or start of a numbered list item
+        const lines = htmlText.split(/\n|(?=\d+\.)/);
+        
+        // 3. Trim, filter empty, wrap in <p> tags, and join
+        const formattedText = lines
+            .map(l => l.trim())
+            .filter(l => l)
+            .map(l => `<p>${l}</p>`)
+            .join("");
+
+        // 4. Update the content
+        msgDiv.innerHTML = `<strong>${BOT_NAME}:</strong>${formattedText}`;
     }
 
     function startThinkingAnimation(id){
