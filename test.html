@@ -11,7 +11,11 @@
             background:#000;
             color:#fff;
             font-family:Arial, sans-serif;
-            height:100vh;
+            
+            /* FIX for iOS Safari Dynamic Toolbars: Use dvh (Dynamic Viewport Height) */
+            min-height: 100dvh; 
+            height: 100dvh; 
+            
             display:flex;
             flex-direction:column;
             overflow:hidden;
@@ -49,7 +53,9 @@
         #overlayHistory, #overlayGuide {
             position:fixed;
             top:0; left:0;
-            width:100%; height:100%;
+            width:100%; 
+            /* Use 100dvh here too for correct full screen overlay */
+            height:100dvh; 
             backdrop-filter:blur(10px);
             background:rgba(255,255,255,0.05);
             display:none;
@@ -93,11 +99,12 @@
             font-size: 0.9em;
         }
 
-        /* Main Chat Area */
+        /* Main Chat Area FIX */
         #chatContainer {
-            flex:1;
-            display:flex;
-            flex-direction:column;
+            flex: 1 1 auto; 
+            min-height: 0; 
+            display: flex;
+            flex-direction: column;
             padding:0 1rem;
             overflow:hidden;
         }
@@ -144,6 +151,7 @@
             border-radius: 10px;
             max-width: 80%;
             word-wrap: break-word;
+            font-family: Arial, sans-serif; 
         }
         #chatMessages div strong {
             display: block;
@@ -171,6 +179,7 @@
             gap:0.5rem;
             padding:1rem; 
             background:#000;
+            flex-shrink: 0; 
         }
 
         #input {
@@ -254,7 +263,7 @@
     </div>
 
     <div id="inputArea">
-        <input id="input" placeholder="Type your mood or favorite song..." />
+        <input id="input" placeholder="Tell me how you feel..." />
         <button id="send">Send</button>
     </div>
 </div>
@@ -365,7 +374,8 @@ For each recommendation, ALWAYS include:
 3. Spotify search link
 4. Apple Music search link
 5. YouTube search link
-Give sweet messages for users, depend on user's mood.`;
+Give sweet messages for users, depend on user's mood.
+IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Example: [Spotify Link](http://spotify.com/search?q=song) and include a newline after each song/link grouping.`;
 
             const response = await fetch("/.netlify/functions/openai-proxy", {
                 method: "POST",

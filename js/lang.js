@@ -8,6 +8,7 @@ en: {
   nav2:'My Fav Artists',
   nav3:'Song Recommendations',
   nav4:'My Playlists',
+  nav5:'AI assistant',
   //nav end//
 
   //genres start//
@@ -54,6 +55,7 @@ ja: {
   nav2:'<span style="font-family: \'Kaisei Tokumin\', serif;">お気に入りのアーティスト</span>',
   nav3:'<span style="font-family: \'Kaisei Tokumin\', serif;">おすすめの曲</span>',
   nav4:'<span style="font-family: \'Kaisei Tokumin\', serif;">マイプレイリスト</span>',
+  nav5:'<span style="font-family: \'Kaisei Tokumin\', serif;">AIアシスタント</span>',
   //nav end//
 
   //genres start//
@@ -143,6 +145,7 @@ my: {
   nav2:'<span style="font-family: \'Noto Serif Myanmar\', serif;">အနှစ်သက်ဆုံးအနုပညာရှင်များ</span',
   nav3:'<span style="font-family: \'Noto Serif Myanmar\', serif;">သီချင်းအကြံပြုချက်များ</span',
   nav4:'<span style="font-family: \'Noto Serif Myanmar\', serif;">သီချင်းစုစည်းမှုများ</span',
+  nav5:'<span style="font-family: \'Noto Serif Myanmar\', serif;">AI assistant</span',
   //nav end//
 
   //genres start//
