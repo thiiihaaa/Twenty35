@@ -1,12 +1,12 @@
- /* General Reset and Base Styles */
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
+ body {
             background:#000;
             color:#fff;
             font-family:Arial, sans-serif;
-            /* FIX for iOS keyboard issues: Use min-height and proper flex setup */
-            min-height: 100vh; 
-            height: 100%; 
+            
+            /* FIX for iOS Safari Dynamic Toolbars: Use dvh (Dynamic Viewport Height) */
+            min-height: 100dvh; 
+            height: 100dvh; 
+            
             display:flex;
             flex-direction:column;
             overflow:hidden;
@@ -42,7 +42,9 @@
         #overlayHistory, #overlayGuide {
             position:fixed;
             top:0; left:0;
-            width:100%; height:100%;
+            width:100%; 
+            /* Use 100dvh here too for correct full screen overlay */
+            height:100dvh; 
             backdrop-filter:blur(10px);
             background:rgba(255,255,255,0.05);
             display:none;
@@ -88,12 +90,14 @@
 
         /* Main Chat Area FIX */
         #chatContainer {
-            flex: 1 1 auto; /* FIX: Allows container to shrink */
-            min-height: 0; /* FIX: Prevents container from taking fixed space */
+            flex: 1 1 auto; 
+            min-height: 70vh; 
             display: flex;
             flex-direction: column;
             padding:0 1rem;
             overflow:hidden;
+            border-radius: 10px;
+            border: dotted 1px #ffffff2f;
         }
 
         /* Quick Suggestions */
@@ -138,7 +142,7 @@
             border-radius: 10px;
             max-width: 80%;
             word-wrap: break-word;
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; 
         }
         #chatMessages div strong {
             display: block;
@@ -163,10 +167,9 @@
         /* Input Area */
         #inputArea {
             display:flex;
-            gap:0.5rem;
-            padding:1rem; 
-            /* FIX: Ensure input area stays fixed at the bottom */
+            gap:0.5rem; 
             flex-shrink: 0; 
+            padding-bottom: 10px;
         }
 
         #input {
@@ -191,5 +194,3 @@
         #send:hover {
             background: #1ab350;
         }
-
-    </style>
