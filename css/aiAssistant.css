@@ -68,6 +68,51 @@ body {
             flex-direction: column;
             overflow-y: scroll;
         }
+
+        .overlayBox::-webkit-scrollbar {
+  width: 8px;
+}
+.overlayBox::-webkit-scrollbar-track {
+  background: #323232;
+  border-radius: 10px;
+}
+.overlayBox::-webkit-scrollbar-thumb {
+  background: #1ED760;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+      #historyList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#historyList::-webkit-scrollbar-track {
+  background: #323232;
+  border-radius: 10px;
+}
+#historyList::-webkit-scrollbar-thumb {
+  background: #1ED760;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.overlayBox .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.overlayBox .close:hover {
+  color: #1ED760;
+}
+
         
         .overlayBox button {
             background: #1ED760;
