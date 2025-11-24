@@ -344,6 +344,9 @@ body {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 2px;
+  -webkit-animation: tracking-in-expand 0.8s ease-in-out both;
+	animation: tracking-in-expand 0.8s ease-in-out both;
+
 }
 
 
@@ -466,22 +469,14 @@ body {
 /* Overlay Background with glass effect */
 .overlay {
   display: none;
-  /* hidden by default */
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-
-  /* Glass effect background */
-  background: rgba(255, 255, 255, 0.1);
-  /* light transparent layer */
-  backdrop-filter: blur(8px);
-  /* blur behind overlay */
-  -webkit-backdrop-filter: blur(8px);
-  /* Safari support */
-
+  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,0.05);
   justify-content: center;
   align-items: center;
 }
@@ -489,7 +484,6 @@ body {
 /* Overlay Box */
 .overlay-content {
   background: rgba(0, 0, 0, 0.6);
-  /* semi-transparent box */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #fff;
@@ -777,6 +771,36 @@ footer{
 
 /*SongRecommendation.html(End)*/
 
+
+
+
+/*animation tracking-in-expand*/
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -792,7 +816,6 @@ footer{
 }
 
 /* Responsive layout */
-/* Responsive layout */
 @media (max-width: 768px) {
     body {
         /* On mobile, we still want the body to lay elements out vertically */
@@ -803,6 +826,8 @@ footer{
     .tobBar{
         display: none;
     }
+
+  
 
     /* Wrap structure for off-canvas sliding (Good) */
     .body-wrapped {
@@ -816,12 +841,7 @@ footer{
         top: 0;
         left: 0;
         width: 100vw;
-        
-        /* === FIX: Remove fixed heights on .sidebar and .main === */
-        /* REMOVED: height: 100dvh; height: 100svh; etc. */
-        
-        /* Allow main content to scroll naturally */
-        min-height: 100vh; /* Optional: ensures at least a full screen view */
+        min-height: 100vh; 
         overflow-y: auto; 
         transition: transform 0.5s ease;
     }

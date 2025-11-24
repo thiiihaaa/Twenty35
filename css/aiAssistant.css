@@ -1,12 +1,9 @@
- body {
+body {
             background:#000;
             color:#fff;
             font-family:Arial, sans-serif;
-            
-            /* FIX for iOS Safari Dynamic Toolbars: Use dvh (Dynamic Viewport Height) */
             min-height: 100dvh; 
             height: 100dvh; 
-            
             display:flex;
             flex-direction:column;
         }
@@ -25,14 +22,19 @@
             display:flex;
             gap:1rem;
             align-items:center;
+            border: dotted 1px #ffffff4a;
+            border-radius: 6px;
         }
 
         #commentIcon, #userGuide {
             cursor:pointer;
             padding: 8px;
             border-radius: 6px;
+            border: dotted 1px #ffffff4a;
+            border-radius: 6px;
             transition: background 0.3s;
         }
+      
         #commentIcon:hover, #userGuide:hover {
              background: #333;
         }
@@ -42,31 +44,35 @@
             position:fixed;
             top:0; left:0;
             width:100%; 
-            /* Use 100dvh here too for correct full screen overlay */
-            height:100dvh; 
+            height:100%; 
             backdrop-filter:blur(10px);
             background:rgba(255,255,255,0.05);
             display:none;
             justify-content:center;
             align-items:center;
-            padding:1rem;
             z-index:20;
+            overflow: scroll;
+            border: dotted 1px #fff;
         }
 
         .overlayBox {
             width:90%; max-width:500px;
-            background:rgba(30,30,30,0.95);
+            height: 80vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius:12px;
             padding:1.5rem;
             border: 1px solid #444;
             display: flex;
             flex-direction: column;
+            overflow-y: scroll;
         }
-        .overlayBox h3 { margin-bottom: 1rem; }
+        
         .overlayBox button {
             background: #1ED760;
             color:white;
-            border:none;
+            border:none; 
             padding: 10px 15px;
             border-radius: 6px;
             cursor: pointer;
@@ -175,7 +181,7 @@
             flex:1;
             padding:0.7rem;
             border:none;
-            border-radius:6px;
+            border-radius:20px;
             outline:none;
             background: #222;
             color: #fff;
@@ -186,7 +192,7 @@
             background:#1ED760;
             border:none;
             color:white;
-            border-radius:6px;
+            border-radius:20px;
             cursor:pointer;
             transition: background 0.3s;
         }

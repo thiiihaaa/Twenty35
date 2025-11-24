@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
   <title>Twenty35 Music (home)</title>
-  <link rel="stylesheet" href="css/aiAssistant.css">
   <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/aiAssistant.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,7 @@
    <div id="leftIcons">
         <span id="commentIcon">💬 History</span>
     </div>
-    <div id="userGuide">❔ User Guide</div>
+    <div id="userGuide">&#x2754 User Guide</div>
 </header>
 
 <div id="overlayHistory">
@@ -74,25 +74,28 @@
 <div id="overlayGuide">
     <div class="overlayBox">
         <h3>User Guide</h3>
-        <p>💬 How to Use
-- Type your message in the chat box.
-- Example:
-- “I feel happy today!”
-- “Suggest songs like Taylor Swift.”
-- “I’m in a chill mood.”
-- Send your message by clicking the Send button or pressing Enter.
-- The chatbot will show ‘Thinking…’ while preparing your recommendations.
-- You’ll receive a list of songs with:
-- 🎶 Song Title
-- 👩‍🎤 Artist Name
-- 🔗 Spotify, Apple Music, and YouTube link
+        <p> 💬 How to Use <br> <br>
+<b><span style="color:  #1ED760;">Step1</span> - Type your message in the chat box.</b><br> <br>
+Example: <br> <br>
+- “I feel happy today!” <br>
+- “Suggest songs like Taylor Swift.” <br>
+- “I’m in a chill mood.” <br> <br>
+
+<b><span style="color:  #1ED760;">Step2</span> - Send your message by clicking the Send button or pressing Enter.</b> <br><br>
+
+<b><span style="color:  #1ED760;">Step3</span> - The chatbot will show ‘Thinking…’ while preparing your recommendations. </b> <br><br>
+You’ll receive a list of songs with: <br><br>
+- 🎶 Song Title <br>
+- 👩‍🎤 Artist Name <br>
+- 🔗 Spotify, Apple Music, and YouTube link <br> <br>
 
 
 
-💡 Tips for Best Experience
-- Be specific about your mood or artist for tailored recommendations.
-- Example: “I want energetic workout songs.”
-- Try different moods to discover new music styles.
+<b>💡 Tips for Best Experience </b> <br> <br>
+Be specific about your mood or artist for tailored recommendations. <br> <br>
+Example: <br> <br> 
+- “I want energetic workout songs.” <br>
+- Try different moods to discover new music styles. <br>
 - Use the links to explore songs directly on your favorite platform.
 </p>
         <button onclick="closeGuide()">Close</button>
@@ -102,6 +105,7 @@
 <div id="chatContainer">
     <div id="chatMessages"></div>
 
+    
     <div id="quickSuggestions">
         <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
         <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>

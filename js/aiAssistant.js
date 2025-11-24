@@ -196,12 +196,19 @@ IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Ex
         },500);
     }
 
-    function saveHistory(msg){
-        const div = document.createElement('div');
-        div.textContent = msg;
-        div.style.marginBottom = '8px';
-        historyList.prepend(div); 
-    }
+ function saveHistory(msg){
+    let htmlText = msg.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+    const lines = htmlText.split(/\n|(?=\d+\.)/);
+    const formattedText = lines
+        .map(l => l.trim())
+        .filter(l => l)
+        .map(l => `<p>${l}</p>`)
+        .join("");
+    const div = document.createElement('div');
+    div.innerHTML = formattedText;
+    div.style.marginBottom = '8px';
+    historyList.prepend(div);
+}
 
     sendBtn.onclick = sendMessage;
     userInput.addEventListener('keypress', e=>{ 
