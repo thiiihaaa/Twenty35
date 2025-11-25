@@ -113,20 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-//TopBar JS(mode switch button)start
-// const switchBtn = document.getElementById('modeSwitch');
- //   const label = document.getElementById('modeLabel');
- //   let isDark = true;
 
-  //  switchBtn.addEventListener('click', () => {
- //     isDark = !isDark;
-  //    document.body.classList.toggle('light-mode', isDark);
-  //    switchBtn.classList.toggle('active', isDark);
-  //    label.textContent = isDark ? 'Light Mode' : 'Dark Mode';
- //   });
 
   //dark/light mode start
-
   const switchBtn = document.getElementById('modeSwitch');
 const label = document.getElementById('modeLabel');
 
@@ -152,12 +141,6 @@ switchBtn.addEventListener('click', () => {
 });
 
 //TopBar JS(mode switch button)end
-
-// main.js
-
-
-//SongRecommendations
-
 });
 
 

@@ -44,6 +44,43 @@ en: {
    buttonKorea:'Korea',
    buttonMyanmar:'Myanamr',
    //playlist country button end//
+   
+   //Song Recommendations start//
+   songRecommendationTitle: '<span style="color:  #1ED760;">Song </span>Recommendations',
+   songRecommendationDes: 'Choose your mood and click, I’ll recommend songs for you.',
+   //Song Recommendations End//
+
+// AI page start
+
+  aiHistoryBtn: "💬 History",
+  aiUserGuideBtn: "❔ User Guide", // replaced HTML entity with actual character
+  aiHistory: "Chat History (Latest at Top)",
+  aiUserGuideTitle: "User Guide",
+  aiUserGuide: `
+    💬 How to Use <br><br>
+    <b><span style="color:#1ED760;">Step1</span> - Type your message in the chat box.</b><br><br>
+    Example:<br><br>
+    - “I feel happy today!” <br>
+    - “Suggest songs like Bruno Mars.” <br>
+    - “I’m in a chill mood.” <br><br>
+
+    <b><span style="color:#1ED760;">Step2</span> - Send your message by clicking the Send button or pressing Enter.</b><br><br>
+
+    <b><span style="color:#1ED760;">Step3</span> - The chatbot will show ‘Thinking…’ while preparing your recommendations.</b><br><br>
+    You’ll receive a list of songs with:<br><br>
+    - 🎶 Song Title <br>
+    - 👩‍🎤 Artist Name <br>
+    - 🔗 Spotify, Apple Music, and YouTube link <br><br>
+
+    <b>💡 Tips for Best Experience</b><br><br>
+    Be specific about your mood or artist for tailored recommendations.<br><br>
+    Example:<br><br>
+    - “I want energetic workout songs.” <br>
+    - Try different moods to discover new music styles. <br>
+    - Use the links to explore songs directly on your favorite platform.
+`
+
+// AI page end
 
 },
 ja: {
@@ -59,7 +96,7 @@ ja: {
   //nav end//
 
   //genres start//
-  genre1:'<span style="font-family: \'Kaisei Tokumin\', serif;">ポップ</span>',
+  genre1:'<span style="font-family: \'Kaisei Tokumin\', serif;"></span>',
   genre2:'<span style="font-family: \'Kaisei Tokumin\', serif;">ロック</span>',
   genre3:'<span style="font-family: \'Kaisei Tokumin\', serif;">アールアンドビー</span>',
   genre4:'<span style="font-family: \'Kaisei Tokumin\', serif;">ラップ</span>',
@@ -68,9 +105,9 @@ ja: {
 
   //genees description start//
   genredesc1: `<span style="font-family: 'Kaisei Tokumin', serif;">
-ポップミュージック（Pop Music）は、大衆に向けて作られた音楽のジャンルで、1950年代から1960年代にかけて発展しました。
+ミュージック（Pop Music）は、大衆に向けて作られた音楽のジャンルで、1950年代から1960年代にかけて発展しました。
 主にアメリカとイギリスで広まり、ラジオやテレビ、音楽チャートで頻繁に流れるようなキャッチーで商業的な楽曲が多いです。
-ポップミュージックは、ロック、ダンス、ヒップホップ、R&Bなど様々な音楽ジャンルから影響を受けています。
+ミュージックは、ロック、ダンス、ヒップホップ、R&Bなど様々な音楽ジャンルから影響を受けています。
 リズムやメロディが特徴であり、歌詞も親しみやすい内容が多いです。
 代表的なアーティストには、マイケル・ジャクソン、マドンナ、ビヨンセ、テイラー・スウィフトなどがいます。
 </span>`,
@@ -119,6 +156,20 @@ genredesc5: `ジャズ (Jazz)<br>
 
 myplaylistPageTitle:'<span style="font-family: \'Kaisei Tokumin\', serif;"> <span style="color:  #1ED760;">マイ </span>プレイリスト</span>',
 
+//Song Recommendations start//
+songRecommendationTitle: '<span style="font-family: \'Kaisei Tokumin\', serif;">おすすめの<span style="color:  #1ED760;">曲</span></span>',
+songRecommendationDes: '<span style="font-family: \'Kaisei Tokumin\', serif;">気分を選んでクリックすると、おすすめの曲を紹介します。</span>',
+
+Joyful:'<span style="font-family: \'Kaisei Tokumin\', serif;">ジョイフル</span>',
+Melancholic:'<span style="font-family: \'Kaisei Tokumin\', serif;">メランコリック</span>',
+Energetic:'<span style="font-family: \'Kaisei Tokumin\', serif;">エネルギッシュ</span>',
+Chill:'<span style="font-family: \'Kaisei Tokumin\', serif;">チルド</span>',
+Mysterious:'<span style="font-family: \'Kaisei Tokumin\', serif;">ミステリアス</span>',
+Nostalgic:'<span style="font-family: \'Kaisei Tokumin\', serif;">懐かしい</span>',
+Romantic:'<span style="font-family: \'Kaisei Tokumin\', serif;">ロマンチック</span>',
+
+//Song Recommendations End//
+
  //playlist-countries start//
   playlistGlobal:'<span style="color: #1ED760;">★</span><span style="font-family: \'Kaisei Tokumin\', serif;">グローバル</span>',
   playlistChina:'<span style="color: #1ED760;">★</span><span style="font-family: \'Kaisei Tokumin\', serif;">中国</span>',
@@ -134,6 +185,37 @@ myplaylistPageTitle:'<span style="font-family: \'Kaisei Tokumin\', serif;"> <spa
    buttonKorea:'<span style="font-family: \'Kaisei Tokumin\', serif;">韓国</span>',
    buttonMyanmar:'<span style="font-family: \'Kaisei Tokumin\', serif;">ミャンマー</span>',
    //playlist country button end//
+
+   aiHistoryBtn: '<span style="font-family: \'Kaisei Tokumin\', serif;">💬 履歴</span>',
+  aiUserGuideBtn: '<span style="font-family: \'Kaisei Tokumin\', serif;">❔ ユーザーガイド</span>',
+  aiHistory: '<span style="font-family: \'Kaisei Tokumin\', serif;">履歴（最新が上に表示されます）</span>',
+  aiUserGuideTitle: '<span style="font-family: \'Kaisei Tokumin\', serif;">ユーザーガイド</span>',
+  aiUserGuide:`<span style="font-family: \'Kaisei Tokumin\', serif;">
+  
+  💬 使い方 <br><br>
+      <b><span style="color:#1ED760;">ステップ1</span> - チャットボックスにメッセージを入力します。</b><br><br>
+      例:<br><br>
+      - 「今日は楽しい気分です！」 <br>
+      - 「ブルーノ・マーズのような曲をおすすめして。」 <br>
+      - 「リラックスした気分です。」 <br><br>
+
+      <b><span style="color:#1ED760;">ステップ2</span> - 送信ボタンをクリックするか、Enterキーを押してメッセージを送信します。</b><br><br>
+
+      <b><span style="color:#1ED760;">ステップ3</span> - チャットボットがおすすめを準備している間、『考え中…』と表示されます。</b><br><br>
+      曲のリストが表示されます:<br><br>
+      - 🎶 曲名 <br>
+      - 👩‍🎤 アーティスト名 <br>
+      - 🔗 Spotify、Apple Music、YouTubeリンク <br><br>
+
+      <b>💡 ベスト体験のためのヒント</b><br><br>
+      気分やアーティストを具体的に伝えると、より的確なおすすめが得られます。<br><br>
+      例:<br><br>
+      - 「エネルギッシュなワークアウト用の曲が欲しい。」 <br>
+      - さまざまな気分を試して新しい音楽スタイルを発見しましょう。 <br>
+      - リンクを使ってお気に入りのプラットフォームで直接曲を楽しめます。
+
+  
+  </span>`,
 },
 
 my: {
@@ -164,7 +246,7 @@ my: {
   genredesc5:'<span style="font-family: \'Padauk\', serif;">(Classical)<br>Classical ဂီတဟာ ၁၇ ရာစုကနေ ၁၉ ရာစုအထိ ဥရောပမှာ ဖွံ့ဖြိုးလာခဲ့ပါတယ်။ Orchestra၊ ပီယာနို၊ တေးသံစုံတီးဝိုင်းတွေက အဓိကတူရိယာတွေဖြစ်ပါတယ်။ ထင်ရှားတဲ့တေးရေးဆရာတွေမှာ Beethoven၊ Mozart၊ Bach တို့ ပါဝင်ပါတယ်<br><br>(Electronic)<br>Electronic ဂီတဆိုတာ အီလက်ထရောနစ်တူရိယာတွေနဲ့ ကွန်ပျူတာတွေကို အသုံးပြုပြီး ဖန်တီးထားတဲ့ဂီတဖြစ်ပါတယ်။ Dance music၊ Techno၊ House စတဲ့ subgenre များစွာပါဝင်ပါတယ်။ ထင်ရှားတဲ့အနုပညာရှင်တွေမှာ Daft Punk၊ David Guetta၊ Calvin Harris တို့ ပါဝင်ပါတယ်<br><br>(Country)<br>Country ဂီတဟာ အမေရိကန်တောင်ပိုင်းမှာ ဖွံ့ဖြိုးလာခဲ့ပါတယ်။ Guitar၊ Banjo၊ Fiddle တို့က အဓိကတူရိယာတွေဖြစ်ပါတယ်။ သီချင်းစာသားတွေကတော့ ဘဝနေ့စဉ်၊ ချစ်ခြင်းမေတ္တာ၊ စိတ်ဒဏ်ရာနဲ့ ဆက်စပ်ပါတယ်။ ထင်ရှားတဲ့အနုပညာရှင်တွေမှာ Johnny Cash၊ Dolly Parton၊ Taylor Swift တို့ ပါဝင်ပါတယ်<br><br>(Metal)<br>Metal ဂီတဟာ ရော့ခ်ဂီတကနေ ဖွံ့ဖြိုးလာခဲ့ပြီး၊ တင်းကျပ်တဲ့ဂစ်တာသံတွေနဲ့ အားကြီးတဲ့ဒရမ်တီးခတ်မှုတွေက အထူးသဖြင့်အင်္ဂါရပ်ဖြစ်ပါတယ်။ Subgenre တွေမှာ Heavy Metal၊ Death Metal၊ Black Metal တို့ ပါဝင်ပါတယ်။ ထင်ရှားတဲ့ဘန်တွေမှာ Metallica၊ Iron Maiden၊ Black Sabbath တို့ ပါဝင်ပါတယ်</span>',
   //genees description end//
 
-   myplaylistPageTitle:'<span style="font-family: \'Noto Serif Myanmar\', serif;"> <span style="color:  #1ED760;">သီချင်း </span>စုစည်းမှုများ</span>',
+   myplaylistPageTitle:'<span style="font-family: \'Noto Serif Myanmar\', serif;"> <span style="color:  #1ED760;">သီချင်း</span>စုစည်းမှုများ</span>',
   
   //playlist-countries start//
   playlistGlobal:'<span style="color: #1ED760;">★</span><span style="font-family: \'Noto Serif Myanmar\', serif;">နိုင်ငံတကာ</span>',
@@ -181,6 +263,43 @@ my: {
    buttonKorea:'<span style="font-family: \'Noto Serif Myanmar\', serif;">ကိုရီးယား</span>',
    buttonMyanmar:'<span style="font-family: \'Noto Serif Myanmar\', serif;">မြန်မာ</span>',
    //playlist country button end//
+
+   //Song Recommendations start//
+songRecommendationTitle: '<span style="font-family: \'Noto Serif Myanmar\', serif;"> <span style="color:  #1ED760;">သီချင်း</span>အကြံပြုချက်များ</span>',
+songRecommendationDes: '<span style="font-family: \'Padauk\', serif;">ကိုယ့်ရဲ့စိတ်ခံစားချက်နဲ့ကိုက်ညီတဲ့moodကိုရွေးပြီးကလစ်လုပ်ပါ၊သီချင်းတွေအကြံပြုပေးပါမယ်။</span>',
+//Song Recommendations End//
+
+aiHistoryBtn: '<span style="font-family: \'Noto Serif Myanmar\', serif;">💬 မှတ်တမ်း</span',
+aiUserGuideBtn: '<span style="font-family: \'Noto Serif Myanmar\', serif;">❔အသုံးပြုမှုလမ်းညွှန်</span',
+aiHistory: '<span style="font-family: \'Noto Serif Myanmar\', serif;">မှတ်တမ်း</span',
+aiUserGuideTitle: '<span style="font-family: \'Noto Serif Myanmar\', serif;">အသုံးပြုမှုလမ်းညွှန်</span',
+aiUserGuide:`
+'<span style="font-family: \'Noto Serif Myanmar\', serif;">
+အသုံးပြုပုံ <br><br>
+      <b><span style="color:#1ED760;">အဆင့်1</span> - မိမိရဲ့စိတ်ခံစားချက်တွေကိုchat box ထဲမှာ ရိုက်ထည့်ပါ။</b><br>
+      ဥပမာ:<br><br>
+      - “ဒီနေ့ ပျော်နေတယ်!” <br>
+      - “Bruno Mars လိုသီချင်းတွေ အကြံပြုပါ။” <br>
+      - “ငါ့စိတ်အေးချမ်းနေတယ်။” <br><br>
+
+      <b><span style="color:#1ED760;">အဆင့်2</span> - Send ခလုတ်ကို နှိပ်ပါ သို့မဟုတ် Enter ကို နှိပ်ပြီး စာကို ပို့ပါ။</b><br>
+
+      <b><span style="color:#1ED760;">အဆင့်3</span> - Chatbot က အကြံပြုချက်များ ပြင်ဆင်နေစဉ် ‘စဉ်းစားနေသည်…’ ဟု ပြသမည်။</b><br>
+      သီချင်းစာရင်းကို ရရှိမည်:<br><br>
+      - 🎶 သီချင်းအမည် <br>
+      - 👩‍🎤 အဆိုတော်အမည် <br>
+      - 🔗 Spotify, Apple Music, YouTube လင့်ခ် <br><br>
+
+      <b>💡 အကောင်းဆုံး အသုံးမှုအတွေ့အကြုံအတွက် အကြံပြုချက်များ</b><br>
+      မင်းရဲ့စိတ်ခံစားချက် သို့မဟုတ် အဆိုတော်ကိုတိကျစွာဖော်ပြတဲ့အခါအကြံပြုချက်တွေ ပိုမိုတိကျမယ်။<br><br>
+      ဥပမာ:<br><br>
+      - “စွမ်းအားပြည့်ဝတဲ့ အားကစားသီချင်းတွေ လိုချင်တယ်။” <br>
+      - စိတ်ခံစားချက် အမျိုးမျိုးကို စမ်းကြည့်ပြီး သစ်ဆန်းတဲ့ ဂီတစတိုင်တွေ ရှာဖွေပါ။ <br>
+      - လင့်ခ်တွေကို သုံးပြီး မင်းအကြိုက်ဆုံး ပလက်ဖောင်းမှာ တိုက်ရိုက် သီချင်းတွေ နားထောင်နိုင်ပါတယ်။
+
+
+</span',
+  `
 
 }
 };
