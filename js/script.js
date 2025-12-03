@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
   //  Sidebar navigation links
   document.querySelectorAll('.countries').forEach(link => {
     link.addEventListener('click', event => {
@@ -172,17 +173,6 @@ document.querySelectorAll(".overlay").forEach(overlay => {
   });
 });
 
-//hambuger menu for smart phone start
-/* const hamburger = document.getElementById('hamburger');
-  const sidebar = document.querySelector('.sidebar');
-  const main = document.querySelector('.main');
-
-  hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    main.classList.toggle('slide');
-  });
-  //hambuger menu for smart phone end */
-
   const layer1 = document.querySelector('.main');
 const menuToggle = document.getElementById('hamburger');
 
@@ -219,8 +209,6 @@ function handleSwipe() {
     layer1.classList.remove('no-scroll');
   }
 }
-
-
 
 
   function moveTopBarElements() {

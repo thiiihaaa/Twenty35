@@ -9,24 +9,10 @@
   <script src="https://kit.fontawesome.com/10b4bd48d5.js" crossorigin="anonymous"></script>
 </head>
 <body class="songRecommendation-body">
-
-  <!-- AI ChatBot -->
-  <div id="chatIcon">💬</div>
-
-<div id="chatOverlay">
-  <div id="chatHeader">Twenty35 ai</div>
-  <div id="chatMessages"></div>
-  <div id="chatInput">
-    <input type="text" id="input" placeholder="Tell me how you feel..." />
-    <button id="send">Send</button>
-  </div>
-</div>
-
-
-
+  
   <!-- Sidebar Navigation -->
   <div class="sidebar" id="sidebar">
-    <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+    <h2><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
 
     <a data-i18n="nav1" class="nav"  href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
@@ -60,43 +46,43 @@
   <div id="profile">👤</div>
 </div>
 
-    <div class="title"><span style="color:  #1ED760;">Song</span> Recommendations</div>
-       <p class="moodPrompt">Choose your mood and click, I’ll recommend songs for you.</p>
+    <div data-i18n="songRecommendationTitle"  class="title"><span style="color:  #1ED760;">Song</span> Recommendations</div>
+       <p data-i18n="songRecommendationDes" class="moodPrompt">Choose your mood and click, I’ll recommend songs for you.</p>
      
   <div class="songRecommendation-container">
   <div class="songRecommendation">
     <div class="joyful songRecommendations"><img src="MusicGenrePics/1x/joyful.png" alt="Joyful Playlist"></div>
-    <button data-moods="Joyful">Joyful</button>
+    <button data-i18n="Joyful" data-moods="Joyful">Joyful</button>
   </div>
 
   <div class="songRecommendation">
     <div class="melancholic songRecommendations"><img src="MusicGenrePics/1x/melancholic.png" alt="Melancholic Playlist"></div>
-    <button data-moods="Melancholic">Melancholic</button>
+    <button data-i18n="Melancholic" data-moods="Melancholic">Melancholic</button>
   </div>
 
   <div class="songRecommendation">
     <div class="energetic songRecommendations"><img src="MusicGenrePics/1x/energetic.png" alt="Energetic Playlist"></div>
-    <button data-moods="Energetic">Energetic</button>
+    <button data-i18n="Energetic" data-moods="Energetic">Energetic</button>
   </div>
 
   <div class="songRecommendation">
     <div class="chill songRecommendations"><img src="MusicGenrePics/1x/chill.png" alt="Chill Playlist"></div>
-    <button data-moods="Chill">Chill</button>
+    <button data-i18n="Chill" data-moods="Chill">Chill</button>
   </div>
 
   <div class="songRecommendation">
     <div class="mysterious songRecommendations"><img src="MusicGenrePics/1x/mysterious.png" alt="Mysterious Playlist"></div>
-    <button data-moods="Mysterious">Mysterious</button>
+    <button data-i18n="Mysterious" data-moods="Mysterious">Mysterious</button>
   </div>
 
   <div class="songRecommendation">
     <div class="nostalgic songRecommendations"><img src="MusicGenrePics/1x/nostalgic.png" alt="Nostalgic Playlist"></div>
-    <button data-moods="Nostalgic">Nostalgic</button>
+    <button data-i18n="Nostalgic" data-moods="Nostalgic">Nostalgic</button>
   </div>
 
   <div class="songRecommendation">
     <div class="Romantic songRecommendations"><img src="MusicGenrePics/1x/romantic.png" alt="Global Playlist"></div>
-    <button data-moods="Romantic">Romantic</button>
+    <button data-i18n="Romantic" data-moods="Romantic">Romantic</button>
   </div>
 </div>
  
@@ -112,7 +98,8 @@
 <script src="js/script.js"></script>
 <script src="js/songRecommendation.js"></script>
 <script src="js/lang.js"></script>
-<script src="js/ai.js"></script>
+<script src="js/aiAssistant.js"></script>
+
 </body>
 </html>
 

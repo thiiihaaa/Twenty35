@@ -42,7 +42,7 @@ en: {
    buttonChina:'China',
    buttonJapan:'Japan',
    buttonKorea:'Korea',
-   buttonMyanmar:'Myanamr',
+   buttonMyanmar:'Myanmar',
    //playlist country button end//
    
    //Song Recommendations start//
@@ -78,10 +78,7 @@ en: {
     - “I want energetic workout songs.” <br>
     - Try different moods to discover new music styles. <br>
     - Use the links to explore songs directly on your favorite platform.
-`
-
-// AI page end
-
+`,
 },
 ja: {
   title: '<span style="font-family: \'Kaisei Tokumin\', serif;">ようこそ</span> Twenty<span style="color: #1ED760;">35</span><span style="font-family: \'Kaisei Tokumin\', serif;">へ</span>',
@@ -96,7 +93,7 @@ ja: {
   //nav end//
 
   //genres start//
-  genre1:'<span style="font-family: \'Kaisei Tokumin\', serif;"></span>',
+  genre1:'<span style="font-family: \'Kaisei Tokumin\', serif;">ポップ</span>',
   genre2:'<span style="font-family: \'Kaisei Tokumin\', serif;">ロック</span>',
   genre3:'<span style="font-family: \'Kaisei Tokumin\', serif;">アールアンドビー</span>',
   genre4:'<span style="font-family: \'Kaisei Tokumin\', serif;">ラップ</span>',
@@ -296,13 +293,11 @@ aiUserGuide:`
       - “စွမ်းအားပြည့်ဝတဲ့ အားကစားသီချင်းတွေ လိုချင်တယ်။” <br>
       - စိတ်ခံစားချက် အမျိုးမျိုးကို စမ်းကြည့်ပြီး သစ်ဆန်းတဲ့ ဂီတစတိုင်တွေ ရှာဖွေပါ။ <br>
       - လင့်ခ်တွေကို သုံးပြီး မင်းအကြိုက်ဆုံး ပလက်ဖောင်းမှာ တိုက်ရိုက် သီချင်းတွေ နားထောင်နိုင်ပါတယ်။
-
-
-</span',
-  `
-
+</span' `,
 }
 };
+
+
 
 // Apply language and font
 function applyLanguage(lang) {
@@ -311,11 +306,6 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
   const key = el.getAttribute("data-i18n");
   el.innerHTML = translations[lang][key] || key;
 });
-
-// Update font class
-// const body = document.body;
-// body.classList.remove("font-en", "font-ja", "font-my");
-// body.classList.add(`font-${lang}`);
  }
 
 

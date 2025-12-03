@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@800&display=swap');
+
 body {
             background:#000;
             color:#fff;
@@ -33,6 +37,8 @@ body {
             border: dotted 1px #ffffff4a;
             border-radius: 6px;
             transition: background 0.3s;
+            font-family: "Fugaz One", serif;
+            font-size: 13px;
         }
       
         #commentIcon:hover, #userGuide:hover {
@@ -53,6 +59,11 @@ body {
             z-index:20;
             overflow: scroll;
             border: dotted 1px #fff;
+        }
+
+        #overlayGuide h3{
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
 
         .overlayBox {
@@ -113,17 +124,6 @@ body {
   color: #1ED760;
 }
 
-        
-        .overlayBox button {
-            background: #1ED760;
-            color:white;
-            border:none; 
-            padding: 10px 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 1rem;
-            align-self: flex-start;
-        }
         #historyList {
             max-height: 400px;
             overflow-y: auto;
@@ -244,3 +244,227 @@ body {
         #send:hover {
             background: #1ab350;
         }
+
+        /* light mode  */
+        body.light-mode header {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    color: #222;
+}
+
+body.light-mode #leftIcons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: dotted 1px #0000002f;
+    border-radius: 6px;
+}
+
+body.light-mode #commentIcon,
+body.light-mode #userGuide {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    border: dotted 1px #0000002f;
+    transition: background 0.3s;
+    color: #222;
+}
+body.light-mode #commentIcon:hover,
+body.light-mode #userGuide:hover {
+    background: #eaeaea;
+}
+
+/* Overlays (History and Guide) */
+body.light-mode #overlayHistory,
+body.light-mode #overlayGuide {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100%; 
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.05);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    overflow: scroll;
+    border: dotted 1px #ccc;
+}
+
+body.light-mode .overlayBox {
+    width: 90%; max-width: 500px;
+    height: 80vh;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    color: #222;
+}
+
+/* Scrollbars */
+body.light-mode .overlayBox::-webkit-scrollbar,
+body.light-mode #historyList::-webkit-scrollbar {
+    width: 8px;
+}
+body.light-mode .overlayBox::-webkit-scrollbar-track,
+body.light-mode #historyList::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+body.light-mode .overlayBox::-webkit-scrollbar-thumb,
+body.light-mode #historyList::-webkit-scrollbar-thumb {
+    background: #1ED760;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+body.light-mode .overlayBox .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #222;
+    transition: 0.3s;
+}
+body.light-mode .overlayBox .close:hover {
+    color: #1ED760;
+}
+
+body.light-mode #historyList {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    flex-grow: 1; 
+}
+body.light-mode #historyList div {
+    padding: 5px 0;
+    border-bottom: 1px dashed #ccc;
+    font-size: 0.9em;
+    color: #333;
+}
+
+body.light-mode #overlayGuide h3{
+            border-bottom: 1px solid #ccc;
+        }
+
+/* Main Chat Area */
+body.light-mode #chatContainer {
+    flex: 1 1 auto; 
+    min-height: 70vh; 
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    overflow: hidden;
+    border-radius: 10px;
+    border: dotted 1px #0000001f;
+    background: #fff;
+}
+
+/* Quick Suggestions */
+body.light-mode #quickSuggestions {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+    padding: 1rem;
+    margin-top: auto; 
+    max-width: 600px; 
+    width: 100%;
+    align-self: center; 
+}
+body.light-mode .suggest-btn {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    transition: background 0.3s, border-color 0.3s;
+    color: #222;
+}
+body.light-mode .suggest-btn:hover {
+    background: #eaeaea;
+    border-color: #bbb;
+}
+
+/* Chat Messages */
+body.light-mode #chatMessages {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+body.light-mode #chatMessages div {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-family: Arial, sans-serif; 
+}
+body.light-mode #chatMessages div strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+/* Bot messages */
+body.light-mode .bot-message {
+    background: #f0f0f0;
+    align-self: flex-start;
+    text-align: left;
+    color: #222;
+}
+/* User messages */
+body.light-mode .user-message {
+    background: #1ED760;
+    margin-left: auto;
+    align-self: flex-end;
+    text-align: left;
+    color: #fff;
+}
+
+/* Input Area */
+body.light-mode #inputArea {
+    display: flex;
+    gap: 0.5rem; 
+    flex-shrink: 0; 
+    padding-bottom: 10px;
+}
+body.light-mode #input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    background: #fff;
+    color: #222;
+}
+body.light-mode #send {
+    padding: 0.7rem 1rem;
+    background: #1ED760;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+body.light-mode #send:hover {
+    background: #1ab350;
+}

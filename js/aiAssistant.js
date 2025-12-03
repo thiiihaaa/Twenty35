@@ -52,7 +52,7 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Example: open overlays (you can hook these to icons/buttons)
+//  open overlays 
 document.getElementById('commentIcon').onclick = () => {
   overlayHistory.style.display = 'flex';
 };
