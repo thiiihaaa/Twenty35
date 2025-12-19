@@ -897,12 +897,13 @@ footer {
   }
 
   .overlay-content {
-    width: 80%;
+    width: 95%;
     height: 80%;
     overflow: hidden;
   }
 
   .overlay-content iframe {
+    width: 85%;
     height: 85%;
     margin-bottom: 10px;
   }
