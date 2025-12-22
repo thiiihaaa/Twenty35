@@ -15,7 +15,7 @@ const countrySelect = document.getElementById("countrySelect");
 /* =========================
     CONFIG (UPDATED FOR NETLIFY FUNCTIONS)
 ========================= */
-/
+
 const TOKEN_URL = "/.netlify/functions/get-spotify-token";
 
 // Other Spotify API Endpoints (using placeholders as requested)
