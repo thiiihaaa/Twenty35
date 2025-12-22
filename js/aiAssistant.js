@@ -9,7 +9,7 @@ const suggestBtns = quickSuggestionsContainer.querySelectorAll('.suggest-btn');
 
 //  overlays
 const overlayHistory = document.getElementById('overlayHistory');
-const overlayGuide   = document.getElementById('overlayGuide');
+const overlayGuide = document.getElementById('overlayGuide');
 
 
 // Quick Chat Suggestions
@@ -35,29 +35,29 @@ const quickSuggestions = [
 
 // Get all close buttons
 document.querySelectorAll('.overlayBox .close').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.closest('.overlayBox').parentElement.style.display = 'none';
-  });
+    btn.addEventListener('click', () => {
+        btn.closest('.overlayBox').parentElement.style.display = 'none';
+    });
 });
 
 // Close when clicking outside the overlayBox
 window.addEventListener('click', (e) => {
-  // If click target is overlayHistory itself (outside box)
-  if (e.target === overlayHistory) {
-    overlayHistory.style.display = 'none';
-  }
-  // If click target is overlayGuide itself (outside box)
-  if (e.target === overlayGuide) {
-    overlayGuide.style.display = 'none';
-  }
+    // If click target is overlayHistory itself (outside box)
+    if (e.target === overlayHistory) {
+        overlayHistory.style.display = 'none';
+    }
+    // If click target is overlayGuide itself (outside box)
+    if (e.target === overlayGuide) {
+        overlayGuide.style.display = 'none';
+    }
 });
 
 //  open overlays 
 document.getElementById('commentIcon').onclick = () => {
-  overlayHistory.style.display = 'flex';
+    overlayHistory.style.display = 'flex';
 };
 document.getElementById('userGuide').onclick = () => {
-  overlayGuide.style.display = 'flex';
+    overlayGuide.style.display = 'flex';
 };
 
 
@@ -69,13 +69,13 @@ function displayRandomSuggestions() {
     suggestBtns.forEach((btn, index) => {
         if (selectedSuggestions[index]) {
             btn.textContent = selectedSuggestions[index];
-            btn.style.display = 'block'; 
+            btn.style.display = 'block';
         } else {
-            btn.style.display = 'none'; 
+            btn.style.display = 'none';
         }
     });
-    
-    if (chatMessages.children.length <= 1) {  
+
+    if (chatMessages.children.length <= 1) {
         quickSuggestionsContainer.style.display = 'grid';
     } else {
         quickSuggestionsContainer.style.display = 'none';
@@ -89,16 +89,16 @@ function sendSuggestedMessage(element) {
 }
 
 // INITIALIZATION
-if(!chatMessages.hasChildNodes()){
-    displayRandomSuggestions(); 
+if (!chatMessages.hasChildNodes()) {
+    displayRandomSuggestions();
     addMessage("", "Hi! Tell me your mood,favorite songs or try one of these suggesitions and I’ll recommend music!", 'bot-message');
 }
 
 // Core functions
-async function sendMessage(){
+async function sendMessage() {
     const message = userInput.value.trim();
-    if(!message) return;
-    
+    if (!message) return;
+
     quickSuggestionsContainer.style.display = 'none';
 
     // Chat window: no prefix
@@ -112,7 +112,7 @@ async function sendMessage(){
     const loadingId = addMessage("", "Thinking", 'bot-message');
     const dotsInterval = startThinkingAnimation(loadingId);
 
-    try{
+    try {
         const systemMessage = `You are a music recommendation chatbot named Twenty35.
 Always respond in the same language as the user input (English / Japanese / Burmese).
 Recommend 3–5 songs based on the user's mood, feelings, or favorite artists.
@@ -127,7 +127,7 @@ IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Ex
 
         const response = await fetch("/.netlify/functions/openai-proxy", {
             method: "POST",
-            headers: { "Content-Type":"application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 model: "gpt-4o-mini",
                 messages: [
@@ -142,8 +142,8 @@ IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Ex
         }
 
         const data = await response.json();
-        const botMessage = data.choices[0].message.content; 
-        
+        const botMessage = data.choices[0].message.content;
+
         clearInterval(dotsInterval);
 
         // Chat window: no prefix
@@ -152,7 +152,7 @@ IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Ex
         // History: keep prefix
         saveHistory(`${BOT_NAME}: ${botMessage}`);
 
-    }catch(err){
+    } catch (err) {
         console.error("Fetch error:", err);
         clearInterval(dotsInterval);
         updateMessage(loadingId, "Oops! Something went wrong. The AI service may be unavailable.");
@@ -160,7 +160,7 @@ IMPORTANT: Format ALL links using standard Markdown syntax: [Link Name](URL). Ex
 }
 
 // --- MODIFIED FUNCTION ---
-function addMessage(sender, text, className){
+function addMessage(sender, text, className) {
     let htmlText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
     const lines = htmlText.split(/\n|(?=\d+\.)/);
     const formattedText = lines
@@ -169,24 +169,24 @@ function addMessage(sender, text, className){
         .map(l => `<p>${l}</p>`)
         .join("");
 
-    const id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`; 
-    
+    const id = `msg-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+
     const messageDiv = document.createElement('div');
     messageDiv.id = id;
-    messageDiv.classList.add(className); 
-    
+    messageDiv.classList.add(className);
+
     // Chat window: no sender prefix
-    messageDiv.innerHTML = formattedText;  
+    messageDiv.innerHTML = formattedText;
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
     return id;
 }
 
 // --- MODIFIED FUNCTION ---
-function updateMessage(id, text){
+function updateMessage(id, text) {
     const msgDiv = document.getElementById(id);
-    if(!msgDiv) return;
-    
+    if (!msgDiv) return;
+
     let htmlText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
     const lines = htmlText.split(/\n|(?=\d+\.)/);
     const formattedText = lines
@@ -196,20 +196,20 @@ function updateMessage(id, text){
         .join("");
 
     // Chat window: no bot prefix
-    msgDiv.innerHTML = formattedText;  
+    msgDiv.innerHTML = formattedText;
 }
 
-function startThinkingAnimation(id){
+function startThinkingAnimation(id) {
     let dots = 0;
-    return setInterval(()=>{
+    return setInterval(() => {
         const msg = document.getElementById(id);
-        if(!msg) return;
-        dots = (dots+1)%4;
-        msg.innerHTML = `Thinking${'.'.repeat(dots)}`; 
-    },500);
+        if (!msg) return;
+        dots = (dots + 1) % 4;
+        msg.innerHTML = `Thinking${'.'.repeat(dots)}`;
+    }, 500);
 }
 
-function saveHistory(msg){
+function saveHistory(msg) {
     let htmlText = msg.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
     const lines = htmlText.split(/\n|(?=\d+\.)/);
     const formattedText = lines
@@ -224,6 +224,6 @@ function saveHistory(msg){
 }
 
 sendBtn.onclick = sendMessage;
-userInput.addEventListener('keypress', e=>{ 
-    if(e.key==='Enter') sendMessage(); 
+userInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') sendMessage();
 });
