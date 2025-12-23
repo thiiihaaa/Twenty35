@@ -343,189 +343,126 @@ body {
 
 
 /* light mode start */
-/* ================= CONTROLS ================= */
-.controls.light-mode {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 800px;
-    margin: 1rem auto;
-    padding: 0 1rem;
-}
 
-/* Search wrapper */
-#search-container-wrapper.light-mode {
-    position: relative;
-    flex-grow: 1;
-    max-width: 350px;
-}
-
-/* Shared Input / Select */
-.controls.light-mode select,
-.controls.light-mode input {
-    height: 30px;
-    padding: 0 0.5rem;
-    border-radius: 10px;
-    border: 1px solid #d1d5db;
+body.light-mode {
     background-color: #ffffff;
     color: #111827;
-    font-size: 13px;
-    outline: none;
 }
 
-.controls.light-mode select:focus,
-#search-engine.light-mode:focus-within {
+/* ===============================
+   CONTROLS / INPUTS
+================================ */
+body.light-mode .controls {
+    background: transparent;
+}
+
+body.light-mode input,
+body.light-mode select {
+    background-color: #ffffff;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+body.light-mode input::placeholder {
+    color: #9ca3af;
+}
+
+body.light-mode select:focus,
+body.light-mode #search-engine:focus-within {
     border-color: #1db954;
     box-shadow: 0 0 6px rgba(29, 185, 84, 0.35);
 }
 
-/* Search bar */
-#search-engine.light-mode {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    max-width: 350px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid #d1d5db;
+/* ===============================
+   SEARCH BAR
+================================ */
+body.light-mode #search-engine {
     background-color: #ffffff;
-    position: relative;
+    border: 1px solid #d1d5db;
 }
 
-#search-container-wrapper.light-mode:focus-within #search-engine.light-mode {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-/* Search input */
-#artistInput.light-mode {
-    flex-grow: 1;
-    height: 100%;
-    border: none;
-    background-color: transparent;
-    padding: 0 0.5rem;
+body.light-mode #artistInput {
     color: #1db954;
 }
 
-#artistInput.light-mode::placeholder {
+body.light-mode #artistInput::placeholder {
     color: #9ca3af;
 }
 
-/* Search button */
-#searchBtn.light-mode {
+body.light-mode #searchBtn {
     color: #6b7280;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0 0.6rem;
-    transition: color 0.2s;
-    height: 100%;
-    display: flex;
-    align-items: center;
 }
 
-#searchBtn.light-mode:hover,
-#search-engine.light-mode:focus-within #searchBtn.light-mode {
+body.light-mode #searchBtn:hover {
     color: #1db954;
 }
 
-/* Select menus */
-#countrySelect.light-mode,
-#langSelect.light-mode {
-    font-family: "Fugaz One", serif;
-    font-size: 11px;
-    width: 80px;
-    text-align: center;
-    appearance: none;
-    text-align-last: center;
+/* ===============================
+   SELECT MENUS
+================================ */
+body.light-mode #countrySelect,
+body.light-mode #langSelect {
+    background-color: #ffffff;
+    color: #111827;
 }
 
-/* ================= DROPDOWN ================= */
-#suggestionsDropdown.light-mode {
-    display: none;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    max-height: 150px;
-    overflow-y: auto;
+/* ===============================
+   DROPDOWN
+================================ */
+body.light-mode #suggestionsDropdown {
     background-color: #ffffff;
     border: 1px solid #d1d5db;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.suggestion-item.light-mode {
-    display: flex;
-    align-items: center;
-    padding: 6px 10px;
-    cursor: pointer;
+body.light-mode .suggestion-item {
     color: #111827;
-    font-size: 13px;
     border-bottom: 1px solid #e5e7eb;
-    transition: background-color 0.2s, color 0.2s;
 }
 
-.suggestion-item.light-mode:hover {
+body.light-mode .suggestion-item:hover {
     background-color: #f3f4f6;
     color: #1db954;
 }
 
-/* ================= GRID ================= */
-.grid.light-mode {
-    margin-top: 20px;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1.3rem;
-}
-
-/* Artist card */
-.artist-card.light-mode {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 0.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+/* ===============================
+   GRID / ARTIST CARD
+================================ */
+body.light-mode .artist-card {
+    background-color: #ffffff;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.artist-card.light-mode:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
-
-.artist-card.light-mode h3 {
+body.light-mode .artist-card h3 {
     color: #111827;
 }
 
-.artist-card.light-mode h3:hover {
+body.light-mode .artist-card h3:hover {
     color: #1ED760;
 }
 
-/* ================= OVERLAY ================= */
-#overlay.light-mode {
-    backdrop-filter: blur(10px);
+/* ===============================
+   OVERLAY
+================================ */
+body.light-mode #overlay {
     background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.overlay-box.light-mode {
+body.light-mode .overlay-box {
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid #e5e7eb;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
-/* ================= TRACK ================= */
-.track.light-mode {
-    background: #f3f4f6;
+/* ===============================
+   TRACK
+================================ */
+body.light-mode .track {
+    background-color: #f3f4f6;
     color: #111827;
 }
 
-.spotify-link.light-mode {
+body.spotify-link.light-mode {
     color: #1db954;
 }
 
