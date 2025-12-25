@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <title>Twenty35 Music (home)</title>
+  <link rel="icon" href="MusicGenrePics/1x/logo.png" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/aiAssistant.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-       
+
 </head>
+
 <body class="aiAssistantBody">
 
-    <div class="sidebar" id="sidebar">
-    <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+  <div class="sidebar" id="sidebar">
+    <h2><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
     <a data-i18n="nav1" class="nav" href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav" href="favoriteartists.html  "> My Fav Artists</a>
     <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
     <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a>
-    <a data-i18n="nav5" class="nav current_nav" href="aiAssistant.html">AI assistant</a> 
+    <a data-i18n="nav5" class="nav current_nav" href="aiAssistant.html">AI assistant</a>
 
-     <div id="mobileExtras"></div>
+    <div id="mobileExtras"></div>
   </div>
 
   <!-- Main Content -->
@@ -35,98 +45,101 @@
     <div class="hamburger" id="hamburger">&#9776;</div>
 
     <div class="tobBar" id="tobBar">
-  <div id="modebutton">
-    <div class="toggle-switch" id="modeSwitch">
-      <div class="slider"></div>
+      <div id="modebutton">
+        <div class="toggle-switch" id="modeSwitch">
+          <div class="slider"></div>
+        </div>
+        <div class="toggle-label" id="modeLabel">Dark Mode</div>
+      </div>
+
+      <div id="langSwitch">
+        <select id="language-select" onchange="setLanguage(this.value)">
+          <option value="en">&#x1F310;English</option>
+          <option value="ja">&#x1F310;日本語</option>
+          <option value="my">&#x1F310;မြန်မာ</option>
+        </select>
+      </div>
+
+      <div id="profile">👤</div>
     </div>
-    <div class="toggle-label" id="modeLabel">Dark Mode</div>
-  </div>
 
-  <div id="langSwitch">
-    <select id="language-select" onchange="setLanguage(this.value)">
-      <option value="en">&#x1F310;English</option>
-      <option value="ja">&#x1F310;日本語</option>
-      <option value="my">&#x1F310;မြန်မာ</option>
-    </select>
-  </div>
-
-  <div id="profile">👤</div>
-</div>
-
-    <div class="title">Twenty<span style="color:  #1ED760;">35</span> AI</div> 
+    <div class="title">Twenty<span style="color:  #1ED760;">35</span> AI</div>
 
 
-<header>
-   <div id="leftIcons">
+    <header>
+      <div id="leftIcons">
         <span data-i18n="aiHistoryBtn" id="commentIcon">💬 History</span>
-    </div>
-    <div data-i18n="aiUserGuideBtn" id="userGuide">&#x2754 User Guide</div>
-</header>
+      </div>
+      <div data-i18n="aiUserGuideBtn" id="userGuide">&#x2754 User Guide</div>
+    </header>
 
-<div id="overlayHistory">
-    <div class="overlayBox">
-      <span class="close">&times;</span>
+    <div id="overlayHistory">
+      <div class="overlayBox">
+        <span class="close">&times;</span>
         <h3 data-i18n="aiHistory">Chat History (Latest at Top)</h3>
         <div id="historyList"></div>
+      </div>
     </div>
-</div>
 
-<div id="overlayGuide">
-    <div class="overlayBox">
-      <span class="close">&times;</span>
+    <div id="overlayGuide">
+      <div class="overlayBox">
+        <span class="close">&times;</span>
         <h3 data-i18n="aiUserGuideTitle">User Guide</h3>
-        <p data-i18n="aiUserGuide">💬 How to Use</span>  <br> <br>
-<b><span style="color:  #1ED760;">Step1</span> - Type your message in the chat box.</b><br> <br>
-Example: <br> <br>
-- “I feel happy today!” <br>
-- “Suggest songs like Bruno Mars.” <br>
-- “I’m in a chill mood.” <br> <br>
+        <p data-i18n="aiUserGuide">💬 How to Use</span> <br> <br>
+          <b><span style="color:  #1ED760;">Step1</span> - Type your message in the chat box.</b><br> <br>
+          Example: <br> <br>
+          - “I feel happy today!” <br>
+          - “Suggest songs like Bruno Mars.” <br>
+          - “I’m in a chill mood.” <br> <br>
 
-<b><span style="color:  #1ED760;">Step2</span> - Send your message by clicking the Send button or pressing Enter.</b> <br><br>
+          <b><span style="color:  #1ED760;">Step2</span> - Send your message by clicking the Send button or pressing
+            Enter.</b> <br><br>
 
-<b><span style="color:  #1ED760;">Step3</span> - The chatbot will show ‘Thinking…’ while preparing your recommendations. </b> <br><br>
-You’ll receive a list of songs with: <br><br>
-- 🎶 Song Title <br>
-- 👩‍🎤 Artist Name <br>
-- 🔗 Spotify, Apple Music, and YouTube link <br> <br>
+          <b><span style="color:  #1ED760;">Step3</span> - The chatbot will show ‘Thinking…’ while preparing your
+            recommendations. </b> <br><br>
+          You’ll receive a list of songs with: <br><br>
+          - 🎶 Song Title <br>
+          - 👩‍🎤 Artist Name <br>
+          - 🔗 Spotify, Apple Music, and YouTube link <br> <br>
 
 
 
-<b>💡 Tips for Best Experience </b> <br> <br>
-Be specific about your mood or artist for tailored recommendations. <br> <br>
-Example: <br> <br> 
-- “I want energetic workout songs.” <br>
-- Try different moods to discover new music styles. <br>
-- Use the links to explore songs directly on your favorite platform.
-</p>
-      
-    </div>
-</div>
+          <b>💡 Tips for Best Experience </b> <br> <br>
+          Be specific about your mood or artist for tailored recommendations. <br> <br>
+          Example: <br> <br>
+          - “I want energetic workout songs.” <br>
+          - Try different moods to discover new music styles. <br>
+          - Use the links to explore songs directly on your favorite platform.
+        </p>
 
-<div id="chatContainer">
-    <div id="chatMessages"></div>
-
-    
-    <div id="quickSuggestions">
-        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
-        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
-        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
-        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
+      </div>
     </div>
 
-    <div id="inputArea">
+    <div id="chatContainer">
+      <div id="chatMessages"></div>
+
+
+      <div id="quickSuggestions">
+        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
+        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
+        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
+        <div class="suggest-btn" onclick="sendSuggestedMessage(this)"></div>
+      </div>
+
+      <div id="inputArea">
         <input id="input" placeholder="Tell me how you feel..." />
         <button id="send">Send</button>
+      </div>
     </div>
-</div>
 
-</div>
+  </div>
 
 
-<script src="js/aiAssistant.js"></script>
-<script src="js/script.js"></script>
-<script src="js/lang.js"></script>
-<script src="js/ai.js"></script>
+  <script src="js/aiAssistant.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/ai.js"></script>
 
 </body>
+
 </html>

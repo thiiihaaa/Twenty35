@@ -1,109 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Twenty35 Music (My playlists)</title>
+  <link rel="icon" href="MusicGenrePics/1x/logo.png" />
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/10b4bd48d5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
   <!-- Sidebar Navigation -->
   <div class="sidebar" id="sidebar">
-    <h2 ><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+    <h2><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
 
-    <a data-i18n="nav1" class="nav"  href="index.html"> Home</a>
+    <a data-i18n="nav1" class="nav" href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
     <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
     <a data-i18n="nav4" class="nav current_nav" href="myPlaylist.html">My Playlists</a>
 
-    <a class="countries" href="#" data-i18n="playlistGlobal" data-country="global"><span style="color: #1ED760;">★</span> GLobal</a>
-    <a class="countries" href="#" data-i18n="playlistChina" data-country="china"><span style="color: #1ED760;">★</span> China</a>
-    <a class="countries" href="#" data-i18n="playlistJapan" data-country="japan"><span style="color: #1ED760;">★</span> Japan</a>
-    <a class="countries" href="#" data-i18n="playlistKorea" data-country="korea"><span style="color: #1ED760;">★</span> Korea</a>
-    <a class="countries" href="#" data-i18n="playlistMyanmar" data-country="myanmar"><span style="color: #1ED760;">★</span> Myanmar</a>
-    
-    <a data-i18n="nav5" class="nav" href="aiAssistant.html">AI assistant</a> 
-    
+    <a class="countries" href="#" data-i18n="playlistGlobal" data-country="global"><span
+        style="color: #1ED760;">★</span> GLobal</a>
+    <a class="countries" href="#" data-i18n="playlistChina" data-country="china"><span style="color: #1ED760;">★</span>
+      China</a>
+    <a class="countries" href="#" data-i18n="playlistJapan" data-country="japan"><span style="color: #1ED760;">★</span>
+      Japan</a>
+    <a class="countries" href="#" data-i18n="playlistKorea" data-country="korea"><span style="color: #1ED760;">★</span>
+      Korea</a>
+    <a class="countries" href="#" data-i18n="playlistMyanmar" data-country="myanmar"><span
+        style="color: #1ED760;">★</span> Myanmar</a>
+
+    <a data-i18n="nav5" class="nav" href="aiAssistant.html">AI assistant</a>
+
     <div id="mobileExtras"></div>
   </div>
 
   <!-- Main Content -->
   <div class="main">
     <div class="hamburger" id="hamburger">&#9776;</div>
-    
+
     <div class="tobBar" id="topBar">
-  <div id="modebutton">
-    <div class="toggle-switch" id="modeSwitch">
-      <div class="slider"></div>
+      <div id="modebutton">
+        <div class="toggle-switch" id="modeSwitch">
+          <div class="slider"></div>
+        </div>
+        <div class="toggle-label" id="modeLabel">Dark Mode</div>
+      </div>
+
+      <div id="langSwitch">
+        <select id="language-select" onchange="setLanguage(this.value)">
+          <option value="en">&#x1F310;English</option>
+          <option value="ja">&#x1F310;日本語</option>
+          <option value="my">&#x1F310;မြန်မာ</option>
+        </select>
+      </div>
+
+      <div id="profile">👤</div>
     </div>
-    <div class="toggle-label" id="modeLabel">Dark Mode</div>
-  </div>
 
-  <div id="langSwitch">
-   <select id="language-select" onchange="setLanguage(this.value)">
-      <option value="en">&#x1F310;English</option>
-      <option value="ja">&#x1F310;日本語</option>
-      <option value="my">&#x1F310;မြန်မာ</option>
-    </select>
-  </div>
+    <div data-i18n="myplaylistPageTitle" class="title"><span style="color:  #1ED760;">My </span>Playlists</div>
+    <div class="countriesTitle"></div>
 
-  <div id="profile">👤</div>
-</div>
+    <div id="tracks" class="tracks"></div>
 
-     <div data-i18n="myplaylistPageTitle" class="title"><span style="color:  #1ED760;">My </span>Playlists</div> 
-     <div class="countriesTitle"></div>
-
-     <div id="tracks" class="tracks"></div>
-
- <div class="myPlaylistGrid-container">
-     <div>
+    <div class="myPlaylistGrid-container">
+      <div>
         <div class="global playlist-countries"><a href="#"><img src="MusicGenrePics/1x/g.png" alt=""></a>
-        <div class="playButton"><p><i class="fa-solid fa-circle-play"></i></p></div>
+          <div class="playButton">
+            <p><i class="fa-solid fa-circle-play"></i></p>
+          </div>
         </div>
-        
-    <button data-i18n="buttonGlobal" data-country="global">Global</button>
-     </div>
 
-    
-    <div>
+        <button data-i18n="buttonGlobal" data-country="global">Global</button>
+      </div>
+
+
+      <div>
         <div class="china playlist-countries"><a href="#"><img src="MusicGenrePics/1x/c.png" alt=""></a>
-        <div class="playButton"><p><i class="fa-solid fa-circle-play"></i></p></div>
+          <div class="playButton">
+            <p><i class="fa-solid fa-circle-play"></i></p>
+          </div>
         </div>
-    <button data-i18n="buttonChina" data-country="china">China</button>
-     </div>
+        <button data-i18n="buttonChina" data-country="china">China</button>
+      </div>
 
-    <div>
+      <div>
         <div class="japan playlist-countries"><a href="#"><img src="MusicGenrePics/1x/j.png" alt=""></a>
-        <div class="playButton"><p><i class="fa-solid fa-circle-play"></i></p></div>
+          <div class="playButton">
+            <p><i class="fa-solid fa-circle-play"></i></p>
+          </div>
         </div>
-    <button data-i18n="buttonJapan" data-country="japan">Japan</button>
-     </div>
+        <button data-i18n="buttonJapan" data-country="japan">Japan</button>
+      </div>
 
-     <div>
+      <div>
         <div class="korea playlist-countries"><a href="#"><img src="MusicGenrePics/1x/k.png" alt=""></a>
-        <div class="playButton"><p><i class="fa-solid fa-circle-play"></i></p></div>
+          <div class="playButton">
+            <p><i class="fa-solid fa-circle-play"></i></p>
+          </div>
         </div>
-    <button data-i18n="buttonKorea" data-country="korea">Korea</button>
-     </div>
+        <button data-i18n="buttonKorea" data-country="korea">Korea</button>
+      </div>
 
-     <div>
+      <div>
         <div class="myanmar playlist-countries"><a href="#"><img src="MusicGenrePics/1x/m.png" alt=""></a>
-        <div class="playButton"><p><i class="fa-solid fa-circle-play"></i></p></div>
+          <div class="playButton">
+            <p><i class="fa-solid fa-circle-play"></i></p>
+          </div>
         </div>
-    <button data-i18n="buttonMyanmar"  data-country="myanamr">Myanmar</button>
-     </div>
-     
- </div>
+        <button data-i18n="buttonMyanmar" data-country="myanamr">Myanmar</button>
+      </div>
 
- <footer>
-  &copy; 2026 Twenty35 by thiha. All rights reserved.
-</footer>
+    </div>
 
-</div>
+    <footer>
+      &copy; 2026 Twenty35 by thiha. All rights reserved.
+    </footer>
 
-<script src="js/script.js" defer></script>
-<script src="js/lang.js"></script>
+  </div>
+
+  <script src="js/script.js" defer></script>
+  <script src="js/lang.js"></script>
+  <script src="js/aiAssistant.js"></script>
 </body>
+
 </html>

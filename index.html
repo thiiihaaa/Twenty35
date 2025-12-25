@@ -3,215 +3,248 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <title>Twenty35 Music (home)</title>
+  <link rel="icon" href="MusicGenrePics/1x/logo.png" />
   <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Kaisei+Tokumin&family=Shrikhand&family=Inter&family=Noto+Sans+JP&family=Padauk&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  
+
   <div class="body-wrapped">
-  <!-- Sidebar Navigation start-->
-  <div class="sidebar" id="sidebar">
-    <h2 class="lightmode-font"><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
-    <a data-i18n="nav1" class="nav current_nav" href="index.html">Home</a>
-    <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
-    <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
-    <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a>
-    <a data-i18n="nav5" class="nav" href="aiAssistant.html">AI assistant</a>
-    
+    <!-- Sidebar Navigation start-->
+    <div class="sidebar" id="sidebar">
+      <h2 class="lightmode-font"><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+      <a data-i18n="nav1" class="nav current_nav" href="index.html">Home</a>
+      <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
+      <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
+      <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a>
+      <a data-i18n="nav5" class="nav" href="aiAssistant.html">AI assistant</a>
 
-    <div id="mobileExtras"></div>
 
-  </div>
-   <!-- Sidebar Navigation end-->
+      <div id="mobileExtras"></div>
 
-  <!-- Main Content start-->
-  <div class="main"> 
-    <div class="hamburger" id="hamburger">&#9776;</div>
-
-    <div class="tobBar" id="topBar">
-      
-  <div id="modebutton">
-    <div class="toggle-switch" id="modeSwitch">
-      <div class="slider"></div>
     </div>
-    <div class="toggle-label" id="modeLabel">Dark Mode</div>
-  </div>
+    <!-- Sidebar Navigation end-->
 
-  <div id="langSwitch">
-    <select id="language-select" onchange="setLanguage(this.value)">
-      <option value="en">&#x1F310;English</option>
-      <option value="ja">&#x1F310;日本語</option>
-      <option value="my">&#x1F310;မြန်မာ</option>
-    </select>
-  </div>
+    <!-- Main Content start-->
+    <div class="main">
+      <div class="hamburger" id="hamburger">&#9776;</div>
 
-  <div id="profile">👤</div>
-</div>
+      <div class="tobBar" id="topBar">
 
-
-
-
-    <div class="title" data-i18n="title">Welcome to Twenty<span style="color:  #1ED760;">35</span></div>
-    <h4 data-i18n="intro"> 
-        I created this website to introduce my favorite songs and artists.It’s also designed to recommend great music to fellow music lovers. Thank you for visiting!</h4>
-
-    <h1 data-i18n="genresTitle">Music Genres</h1>
-    <div class="grid-container">
-      <div>
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front"><img src="MusicGenrePics/1x/pop.png" alt="pop"></div>
-            <div class="flip-back">
-              <p data-i18n="genredesc1" >Pop music is a genre created for a wide audience, and it began to flourish between the 1950s and 1960s.
-It spread mainly in the United States and the United Kingdom, featuring catchy and commercial songs that often appear on radio, TV, and music charts.
-Pop music draws influence from various genres like rock, dance, hip-hop, and R&B.
-It’s known for its rhythm and melody, with lyrics that are easy to relate to and enjoy.
-Famous pop artists include Michael Jackson, Madonna, Beyoncé, and Taylor Swift.
-</p>
-            </div>
+        <div id="modebutton">
+          <div class="toggle-switch" id="modeSwitch">
+            <div class="slider"></div>
           </div>
+          <div class="toggle-label" id="modeLabel">Dark Mode</div>
         </div>
-        <button data-i18n="genre1" class="flip-button">Pop</button>
+
+        <div id="langSwitch">
+          <select id="language-select" onchange="setLanguage(this.value)">
+            <option value="en">&#x1F310;English</option>
+            <option value="ja">&#x1F310;日本語</option>
+            <option value="my">&#x1F310;မြန်မာ</option>
+          </select>
+        </div>
+
+        <div id="profile">👤</div>
       </div>
 
-      <div>
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front"><img src="MusicGenrePics/1x/rock.png" alt="Rock"></div>
-            <div class="flip-back">
-              <p data-i18n="genredesc2" >Rock music is a genre that originated in the United States during the 1950s. It typically features electric guitar, bass, and drums as its main instruments. Known for its energetic and rebellious spirit, rock music had a major influence on youth culture.
-In the 1960s, bands like The Beatles and The Rolling Stones emerged, helping rock music gain worldwide popularity. In Japan as well, rock bands began to thrive from the late 1960s through the 1970s.
-Some of the most iconic rock bands include The Beatles, The Rolling Stones, Queen, and Nirvana.
-</p>
+
+
+
+      <div class="title" data-i18n="title">Welcome to Twenty<span style="color:  #1ED760;">35</span></div>
+      <h4 data-i18n="intro">
+        I created this website to introduce my favorite songs and artists.It’s also designed to recommend great music to
+        fellow music lovers. Thank you for visiting!</h4>
+
+      <h1 data-i18n="genresTitle">Music Genres</h1>
+      <div class="grid-container">
+        <div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front"><img src="MusicGenrePics/1x/pop.png" alt="pop"></div>
+              <div class="flip-back">
+                <p data-i18n="genredesc1">Pop music is a genre created for a wide audience, and it began to flourish
+                  between the 1950s and 1960s.
+                  It spread mainly in the United States and the United Kingdom, featuring catchy and commercial songs
+                  that often appear on radio, TV, and music charts.
+                  Pop music draws influence from various genres like rock, dance, hip-hop, and R&B.
+                  It’s known for its rhythm and melody, with lyrics that are easy to relate to and enjoy.
+                  Famous pop artists include Michael Jackson, Madonna, Beyoncé, and Taylor Swift.
+                </p>
+              </div>
             </div>
           </div>
+          <button data-i18n="genre1" class="flip-button">Pop</button>
         </div>
-        <button data-i18n="genre2" class="flip-button">Rock</button>
+
+        <div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front"><img src="MusicGenrePics/1x/rock.png" alt="Rock"></div>
+              <div class="flip-back">
+                <p data-i18n="genredesc2">Rock music is a genre that originated in the United States during the 1950s.
+                  It typically features electric guitar, bass, and drums as its main instruments. Known for its
+                  energetic and rebellious spirit, rock music had a major influence on youth culture.
+                  In the 1960s, bands like The Beatles and The Rolling Stones emerged, helping rock music gain worldwide
+                  popularity. In Japan as well, rock bands began to thrive from the late 1960s through the 1970s.
+                  Some of the most iconic rock bands include The Beatles, The Rolling Stones, Queen, and Nirvana.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button data-i18n="genre2" class="flip-button">Rock</button>
+        </div>
+
+        <div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front"><img src="MusicGenrePics/1x/rnb.png" alt="RnB"></div>
+              <div class="flip-back">
+                <p data-i18n="genredesc3">
+                  R&B (Rhythm and Blues) is a music genre that developed in the 1940s from African American communities
+                  in the United States. It was originally influenced by blues and jazz, but over time it shaped and was
+                  shaped by other styles like soul, funk, and hip-hop.
+                  R&B is known for its emotionally expressive vocals, strong rhythms, and complex melodies. The lyrics
+                  often explore themes of love, joy, and the struggles of everyday life.
+                  Notable R&B artists include Aretha Franklin, Marvin Gaye, Michael Jackson, and Beyoncé.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button data-i18n="genre3" class="flip-button">R&B</button>
+        </div>
+
+        <div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front"><img src="MusicGenrePics/1x/rap.png" alt="Rap"></div>
+              <div class="flip-back">
+                <p data-i18n="genredesc4">Rap emerged in 1970s New York as part of hip-hop culture.
+                  It’s defined by rhythmic speech or “rapping” over beats. Lyrics often address social issues, personal
+                  experiences,
+                  and street life. Beats and DJ techniques like turntables play a key role. Famous rappers include Tupac
+                  Shakur,
+                  Notorious B.I.G., Jay-Z, Eminem, and Kanye West.</p>
+              </div>
+            </div>
+          </div>
+          <button data-i18n="genre4" class="flip-button">Rap</button>
+        </div>
+
+        <div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front"><img src="MusicGenrePics/1x/others.png" alt="othergeeres"></div>
+              <div class="flip-back">
+                <p data-i18n="genredesc5">(Jazz)<br> Jazz is a music genre that developed in the early 20th century in
+                  the United States. It is characterized by improvisation, complex rhythms, and harmonies. Notable
+                  artists include Louis Armstrong, Duke Ellington, and Miles Davis.<br><br (Classical)<br>Classical
+                  music developed in Europe between the 17th and 19th centuries. It features orchestras, piano, and
+                  string quartets as its main instruments. Famous composers include Beethoven, Mozart, and Bach.<br><br>
+                  (Electronic)Electronic music is created using electronic instruments and computers. It includes many
+                  subgenres such as dance music, techno, and house. Well-known artists include Daft Punk, David Guetta,
+                  and Calvin Harris.<br><br>
+                  (Country)<br>Country music originated in the southern United States. It typically features instruments
+                  like guitar, banjo, and fiddle. Lyrics often explore everyday life, love, and heartbreak. Notable
+                  artists include Johnny Cash, Dolly Parton, and Taylor Swift.<br><br>
+                  (Metal)<br>Metal music is a genre that evolved from rock, known for heavy guitar riffs and powerful
+                  drums. Subgenres include heavy metal, death metal, and black metal. Famous bands include Metallica,
+                  Iron Maiden, and Black Sabbath.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button data-i18n="genre5" class="flip-button">Other genres</button>
+        </div>
       </div>
 
-      <div>
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front"><img src="MusicGenrePics/1x/rnb.png" alt="RnB"></div>
-            <div class="flip-back">
-              <p data-i18n="genredesc3" >
-                R&B (Rhythm and Blues) is a music genre that developed in the 1940s from African American communities in the United States. It was originally influenced by blues and jazz, but over time it shaped and was shaped by other styles like soul, funk, and hip-hop.
-R&B is known for its emotionally expressive vocals, strong rhythms, and complex melodies. The lyrics often explore themes of love, joy, and the struggles of everyday life.
-Notable R&B artists include Aretha Franklin, Marvin Gaye, Michael Jackson, and Beyoncé.
-</p>
-            </div>
-          </div>
-        </div>
-        <button data-i18n="genre3" class="flip-button">R&B</button>
-      </div>
+      <footer>
+        &copy; 2026 Twenty35 by thiha. All rights reserved.
+      </footer>
 
-      <div>
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front"><img src="MusicGenrePics/1x/rap.png" alt="Rap"></div>
-            <div class="flip-back">
-              <p data-i18n="genredesc4" >Rap emerged in 1970s New York as part of hip-hop culture. 
-                It’s defined by rhythmic speech or “rapping” over beats. Lyrics often address social issues, personal experiences, 
-                and street life. Beats and DJ techniques like turntables play a key role. Famous rappers include Tupac Shakur, 
-                Notorious B.I.G., Jay-Z, Eminem, and Kanye West.</p>
-            </div>
-          </div>
-        </div>
-        <button data-i18n="genre4" class="flip-button">Rap</button>
-      </div>
+    </div>
 
-      <div>
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front"><img src="MusicGenrePics/1x/others.png" alt="othergeeres"></div>
-            <div class="flip-back">
-              <p data-i18n="genredesc5" >(Jazz)<br> Jazz is a music genre that developed in the early 20th century in the United States. It is characterized by improvisation, complex rhythms, and harmonies. Notable artists include Louis Armstrong, Duke Ellington, and Miles Davis.<br><br
-                (Classical)<br>Classical music developed in Europe between the 17th and 19th centuries. It features orchestras, piano, and string quartets as its main instruments. Famous composers include Beethoven, Mozart, and Bach.<br><br>
-                (Electronic)Electronic music is created using electronic instruments and computers. It includes many subgenres such as dance music, techno, and house. Well-known artists include Daft Punk, David Guetta, and Calvin Harris.<br><br>
-                (Country)<br>Country music originated in the southern United States. It typically features instruments like guitar, banjo, and fiddle. Lyrics often explore everyday life, love, and heartbreak. Notable artists include Johnny Cash, Dolly Parton, and Taylor Swift.<br><br>
-                (Metal)<br>Metal music is a genre that evolved from rock, known for heavy guitar riffs and powerful drums. Subgenres include heavy metal, death metal, and black metal. Famous bands include Metallica, Iron Maiden, and Black Sabbath.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button data-i18n="genre5" class="flip-button">Other genres</button>
+    <!-- Overlay Boxes -->
+    <div id="overlay-pop" class="overlay">
+      <div class="overlay-content">
+        <span class="close">&times;</span>
+        <h2>Pop Music</h2>
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1EIehE24MT7gFU?utm_source=generator" width="100%"
+          height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
 
-<footer>
-  &copy; 2026 Twenty35 by thiha. All rights reserved.
-</footer>
-
-  </div>
-
-  <!-- Overlay Boxes -->
-  <div id="overlay-pop" class="overlay">
-    <div class="overlay-content">
-      <span class="close">&times;</span>
-      <h2>Pop Music</h2>
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIehE24MT7gFU?utm_source=generator" 
-      width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div id="overlay-rock" class="overlay">
+      <div class="overlay-content">
+        <span class="close">&times;</span>
+        <h2>Rock Music</h2>
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1EIefLxrHQP8p4?utm_source=generator" width="100%"
+          height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
-  </div>
 
-  <div id="overlay-rock" class="overlay">
-    <div class="overlay-content">
-      <span class="close">&times;</span>
-      <h2>Rock Music</h2>
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIefLxrHQP8p4?utm_source=generator" 
-      width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <div id="overlay-rnb" class="overlay">
-    <div class="overlay-content">
-      <span class="close">&times;</span>
-      <h2>R&B Music</h2>
-      <iframe data-testid="embed-iframe" style="border-radius:12px"
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1EIfeeY1Nyg89M?utm_source=generator" width="100%"
-        height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; 
+    <div id="overlay-rnb" class="overlay">
+      <div class="overlay-content">
+        <span class="close">&times;</span>
+        <h2>R&B Music</h2>
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1EIfeeY1Nyg89M?utm_source=generator" width="100%"
+          height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; 
     encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
-  </div>
 
-  <div id="overlay-rap" class="overlay">
-    <div class="overlay-content">
-      <span class="close">&times;</span>
-      <h2>Rap Music</h2>
-      <iframe data-testid="embed-iframe" style="border-radius:12px"
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1EIgbjUtLiWmHt?utm_source=generator" width="100%"
-        height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; 
+    <div id="overlay-rap" class="overlay">
+      <div class="overlay-content">
+        <span class="close">&times;</span>
+        <h2>Rap Music</h2>
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1EIgbjUtLiWmHt?utm_source=generator" width="100%"
+          height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; 
     encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
-  </div>
 
-  <div id="overlay-other" class="overlay">
-    <div class="overlay-content">
-      <span class="close">&times;</span>
-      <h2>Other Genres</h2>
-      <iframe data-testid="embed-iframe" style="border-radius:12px" <iframe data-testid="embed-iframe"
-        style="border-radius:12px"
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1EIZOJFnoOzaj2?utm_source=generator" width="100%"
-        height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; 
+    <div id="overlay-other" class="overlay">
+      <div class="overlay-content">
+        <span class="close">&times;</span>
+        <h2>Other Genres</h2>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" <iframe data-testid="embed-iframe"
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1EIZOJFnoOzaj2?utm_source=generator" width="100%"
+          height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; 
      encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
+      </div>
 
-  </div>
+    </div>
 
   </div> <!-- bodywrapped end -->
 </body>
 <script src="js/script.js"></script>
 <script src="js/lang.js"></script>
+<script src="js/aiAssistant.js"></script>
 <script src="https://kit.fontawesome.com/2a8e9a15f8.js" crossorigin="anonymous"></script>
 
 </html>

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Twenty35 Music (Song Recommendations)</title>
+  <link rel="icon" href="MusicGenrePics/1x/logo.png" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/ai.css">
   <script src="https://kit.fontawesome.com/10b4bd48d5.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="songRecommendation-body">
-  
+
   <!-- Sidebar Navigation -->
   <div class="sidebar" id="sidebar">
     <h2><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
 
-    <a data-i18n="nav1" class="nav"  href="index.html"> Home</a>
+    <a data-i18n="nav1" class="nav" href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav" href="favoriteartists.html"> My Fav Artists</a>
     <a data-i18n="nav3" class="nav current_nav" href="songRecommendation.html"> Song Recommendations</a>
     <a data-i18n="nav4" class="nav" href="myPlaylist.html">My Playlists</a>
-    <a data-i18n="nav5" class="nav" href="aiAssistant.html">AI assistant</a> 
-     <div id="mobileExtras"></div>
+    <a data-i18n="nav5" class="nav" href="aiAssistant.html">AI assistant</a>
+    <div id="mobileExtras"></div>
 
   </div>
 
@@ -28,78 +31,84 @@
     <div class="hamburger" id="hamburger">&#9776;</div>
 
     <div class="tobBar" id="tobBar">
-  <div id="modebutton">
-    <div class="toggle-switch" id="modeSwitch">
-      <div class="slider"></div>
+      <div id="modebutton">
+        <div class="toggle-switch" id="modeSwitch">
+          <div class="slider"></div>
+        </div>
+        <div class="toggle-label" id="modeLabel">Dark Mode</div>
+      </div>
+
+      <div id="langSwitch">
+        <select id="language-select" onchange="setLanguage(this.value)">
+          <option value="en">&#x1F310;English</option>
+          <option value="ja">&#x1F310;日本語</option>
+          <option value="my">&#x1F310;မြန်မာ</option>
+        </select>
+      </div>
+
+      <div id="profile">👤</div>
     </div>
-    <div class="toggle-label" id="modeLabel">Dark Mode</div>
+
+    <div data-i18n="songRecommendationTitle" class="title"><span style="color:  #1ED760;">Song</span> Recommendations
+    </div>
+    <p data-i18n="songRecommendationDes" class="moodPrompt">Choose your mood and click, I’ll recommend songs for you.
+    </p>
+
+    <div class="songRecommendation-container">
+      <div class="songRecommendation">
+        <div class="joyful songRecommendations"><img src="MusicGenrePics/1x/joyful.png" alt="Joyful Playlist"></div>
+        <button data-i18n="Joyful" data-moods="Joyful">Joyful</button>
+      </div>
+
+      <div class="songRecommendation">
+        <div class="melancholic songRecommendations"><img src="MusicGenrePics/1x/melancholic.png"
+            alt="Melancholic Playlist"></div>
+        <button data-i18n="Melancholic" data-moods="Melancholic">Melancholic</button>
+      </div>
+
+      <div class="songRecommendation">
+        <div class="energetic songRecommendations"><img src="MusicGenrePics/1x/energetic.png" alt="Energetic Playlist">
+        </div>
+        <button data-i18n="Energetic" data-moods="Energetic">Energetic</button>
+      </div>
+
+      <div class="songRecommendation">
+        <div class="chill songRecommendations"><img src="MusicGenrePics/1x/chill.png" alt="Chill Playlist"></div>
+        <button data-i18n="Chill" data-moods="Chill">Chill</button>
+      </div>
+
+      <div class="songRecommendation">
+        <div class="mysterious songRecommendations"><img src="MusicGenrePics/1x/mysterious.png"
+            alt="Mysterious Playlist"></div>
+        <button data-i18n="Mysterious" data-moods="Mysterious">Mysterious</button>
+      </div>
+
+      <div class="songRecommendation">
+        <div class="nostalgic songRecommendations"><img src="MusicGenrePics/1x/nostalgic.png" alt="Nostalgic Playlist">
+        </div>
+        <button data-i18n="Nostalgic" data-moods="Nostalgic">Nostalgic</button>
+      </div>
+
+      <div class="songRecommendation">
+        <div class="Romantic songRecommendations"><img src="MusicGenrePics/1x/romantic.png" alt="Global Playlist"></div>
+        <button data-i18n="Romantic" data-moods="Romantic">Romantic</button>
+      </div>
+    </div>
+
+
+    <div class="musicPlayer"></div>
+
+    <footer>
+      &copy; 2026 Twenty35 by thiha. All rights reserved.
+    </footer>
   </div>
 
-  <div id="langSwitch">
-    <select id="language-select" onchange="setLanguage(this.value)">
-      <option value="en">&#x1F310;English</option>
-      <option value="ja">&#x1F310;日本語</option>
-      <option value="my">&#x1F310;မြန်မာ</option>
-    </select>
-  </div>
 
-  <div id="profile">👤</div>
-</div>
-
-    <div data-i18n="songRecommendationTitle"  class="title"><span style="color:  #1ED760;">Song</span> Recommendations</div>
-       <p data-i18n="songRecommendationDes" class="moodPrompt">Choose your mood and click, I’ll recommend songs for you.</p>
-     
-  <div class="songRecommendation-container">
-  <div class="songRecommendation">
-    <div class="joyful songRecommendations"><img src="MusicGenrePics/1x/joyful.png" alt="Joyful Playlist"></div>
-    <button data-i18n="Joyful" data-moods="Joyful">Joyful</button>
-  </div>
-
-  <div class="songRecommendation">
-    <div class="melancholic songRecommendations"><img src="MusicGenrePics/1x/melancholic.png" alt="Melancholic Playlist"></div>
-    <button data-i18n="Melancholic" data-moods="Melancholic">Melancholic</button>
-  </div>
-
-  <div class="songRecommendation">
-    <div class="energetic songRecommendations"><img src="MusicGenrePics/1x/energetic.png" alt="Energetic Playlist"></div>
-    <button data-i18n="Energetic" data-moods="Energetic">Energetic</button>
-  </div>
-
-  <div class="songRecommendation">
-    <div class="chill songRecommendations"><img src="MusicGenrePics/1x/chill.png" alt="Chill Playlist"></div>
-    <button data-i18n="Chill" data-moods="Chill">Chill</button>
-  </div>
-
-  <div class="songRecommendation">
-    <div class="mysterious songRecommendations"><img src="MusicGenrePics/1x/mysterious.png" alt="Mysterious Playlist"></div>
-    <button data-i18n="Mysterious" data-moods="Mysterious">Mysterious</button>
-  </div>
-
-  <div class="songRecommendation">
-    <div class="nostalgic songRecommendations"><img src="MusicGenrePics/1x/nostalgic.png" alt="Nostalgic Playlist"></div>
-    <button data-i18n="Nostalgic" data-moods="Nostalgic">Nostalgic</button>
-  </div>
-
-  <div class="songRecommendation">
-    <div class="Romantic songRecommendations"><img src="MusicGenrePics/1x/romantic.png" alt="Global Playlist"></div>
-    <button data-i18n="Romantic" data-moods="Romantic">Romantic</button>
-  </div>
-</div>
- 
-
- <div class="musicPlayer"></div> 
-
- <footer>
-  &copy; 2026 Twenty35 by thiha. All rights reserved.
-</footer>
-</div>
-
-
-<script src="js/script.js"></script>
-<script src="js/songRecommendation.js"></script>
-<script src="js/lang.js"></script>
-<script src="js/aiAssistant.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/songRecommendation.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/aiAssistant.js"></script>
 
 </body>
-</html>
 
+</html>
