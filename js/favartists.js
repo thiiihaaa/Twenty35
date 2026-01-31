@@ -1,8 +1,6 @@
 const artistInput = document.getElementById("artistInput");
 const searchBtn = document.getElementById("searchBtn");
 const suggestionsDropdown = document.getElementById("suggestionsDropdown");
-
-// Ensure other elements are correctly referenced
 const artistGrid = document.getElementById("artistGrid");
 const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");

@@ -28,7 +28,8 @@ en: {
   //genees description end//
 
  myplaylistPageTitle:'<span style="color:  #1ED760;">My </span>Playlists',
- 
+
+ favartistTitle: '<span style="color: #1ED760;">My </span>Favourite Artists</div>', 
   //playlist-countries start//
   playlistGlobal:'<span style="color: #1ED760;">★</span>Global',
   playlistChina:'<span style="color: #1ED760;">★</span>China',
@@ -152,6 +153,7 @@ genredesc5: `ジャズ (Jazz)<br>
 代表的なバンドには、メタリカ、アイアン・メイデン、ブラック・サバスがいます。`,
 
 myplaylistPageTitle:'<span style="font-family: \'Kaisei Tokumin\', serif;"> <span style="color:  #1ED760;">マイ </span>プレイリスト</span>',
+favartistTitle: '<span style="font-family: \'Kaisei Tokumin\', serif;"><span style="color: #1ED760;">お気に入り</span>のアーティスト</div>', 
 
 //Song Recommendations start//
 songRecommendationTitle: '<span style="font-family: \'Kaisei Tokumin\', serif;">おすすめの<span style="color:  #1ED760;">曲</span></span>',
@@ -244,8 +246,9 @@ my: {
   //genees description end//
 
    myplaylistPageTitle:'<span style="font-family: \'Noto Serif Myanmar\', serif;"> <span style="color:  #1ED760;">သီချင်း</span>စုစည်းမှုများ</span>',
+   favartistTitle: '<span style="font-family: \'Noto Serif Myanmar\',serif;"> <span style="color: #1ED760;">အနှစ်သက်ဆုံး</span>အနုပညာရှင်များ</div>', 
   
-  //playlist-countries start//
+   //playlist-countries start//
   playlistGlobal:'<span style="color: #1ED760;">★</span><span style="font-family: \'Noto Serif Myanmar\', serif;">နိုင်ငံတကာ</span>',
   playlistChina:'<span style="color: #1ED760;">★</span><span style="font-family: \'Noto Serif Myanmar\', serif;">တရုတ်</span>',
   playlistJapan:'<span style="color: #1ED760;">★</span><span style="font-family: \'Noto Serif Myanmar\', serif;">ဂျပန်</span>',
@@ -272,26 +275,25 @@ aiHistory: '<span style="font-family: \'Noto Serif Myanmar\', serif;">မှတ�
 aiUserGuideTitle: '<span style="font-family: \'Noto Serif Myanmar\', serif;">အသုံးပြုမှုလမ်းညွှန်</span',
 aiUserGuide:`
 '<span style="font-family: \'Noto Serif Myanmar\', serif;">
-အသုံးပြုပုံ <br><br>
+အသုံးပြုပုံ <br>
       <b><span style="color:#1ED760;">အဆင့်1</span> - မိမိရဲ့စိတ်ခံစားချက်တွေကိုchat box ထဲမှာ ရိုက်ထည့်ပါ။</b><br>
-      ဥပမာ:<br><br>
+      ဥပမာ:<br>
       - “ဒီနေ့ ပျော်နေတယ်!” <br>
-      - “Bruno Mars လိုသီချင်းတွေ အကြံပြုပါ။” <br>
-      - “ငါ့စိတ်အေးချမ်းနေတယ်။” <br><br>
+      - “Bruno Mars သီချင်းနဲ့ဆင်တဲ့သီချင်းတွေ အကြံပြုပါ။” <br><br>
 
-      <b><span style="color:#1ED760;">အဆင့်2</span> - Send ခလုတ်ကို နှိပ်ပါ သို့မဟုတ် Enter ကို နှိပ်ပြီး စာကို ပို့ပါ။</b><br>
+      <b><span style="color:#1ED760;">အဆင့်2</span> - Sendကို နှိပ်ပါ (သို့) Enterကိုနှိပ်ပါ။</b><br>
 
-      <b><span style="color:#1ED760;">အဆင့်3</span> - Chatbot က အကြံပြုချက်များ ပြင်ဆင်နေစဉ် ‘စဉ်းစားနေသည်…’ ဟု ပြသမည်။</b><br>
-      သီချင်းစာရင်းကို ရရှိမည်:<br><br>
+      <b><span style="color:#1ED760;">အဆင့်3</span> - AIက အကြံပြုချက်များပြင်ဆင်နေစဉ် ‘thinking…’ ဟု ပြသမည်။</b><br>
+      အဲဒီနောက်သီချင်းlistကို ရရှိမည်:<br>
       - 🎶 သီချင်းအမည် <br>
       - 👩‍🎤 အဆိုတော်အမည် <br>
       - 🔗 Spotify, Apple Music, YouTube လင့်ခ် <br><br>
 
       <b>💡 အကောင်းဆုံး အသုံးမှုအတွေ့အကြုံအတွက် အကြံပြုချက်များ</b><br>
-      မင်းရဲ့စိတ်ခံစားချက် သို့မဟုတ် အဆိုတော်ကိုတိကျစွာဖော်ပြတဲ့အခါအကြံပြုချက်တွေ ပိုမိုတိကျမယ်။<br><br>
-      ဥပမာ:<br><br>
-      - “စွမ်းအားပြည့်ဝတဲ့ အားကစားသီချင်းတွေ လိုချင်တယ်။” <br>
-      - စိတ်ခံစားချက် အမျိုးမျိုးကို စမ်းကြည့်ပြီး သစ်ဆန်းတဲ့ ဂီတစတိုင်တွေ ရှာဖွေပါ။ <br>
+      မိမိရဲ့စိတ်ခံစားချက် (သို့) Artistကိုတိကျစွာဖော်ပြတဲ့အခါအကြံပြုချက်တွေ ပိုမိုတိကျပါလိမ့်မယ်။<br><br>
+      ဥပမာ:<br>
+      - “Energetic ဖြစ်တဲ့workoutသီချင်းတွေ လိုချင်တယ်။” <br>
+      - စိတ်ခံစားချက် အမျိုးမျိုးကို စမ်းပို့ကြည့်ပြီး သစ်ဆန်းတဲ့ ဂီတစတိုင်တွေ ရှာဖွေပါ။ <br>
       - လင့်ခ်တွေကို သုံးပြီး မင်းအကြိုက်ဆုံး ပလက်ဖောင်းမှာ တိုက်ရိုက် သီချင်းတွေ နားထောင်နိုင်ပါတယ်။
 </span' `,
 }

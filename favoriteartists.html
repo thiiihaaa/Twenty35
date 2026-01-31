@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Twenty35 Music</title>
+  <title>Twenty35-My fav artists</title>
   <link rel="icon" href="MusicGenrePics/1x/logo.png" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/favartists.css">
@@ -14,7 +14,13 @@
 <body>
 
   <div class="sidebar" id="sidebar">
-    <h2><a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a></h2>
+       <h2 class="lightmode-font">
+        <a href="index.html">Twenty<span style="color:  #1ED760;">35</span> </a> 
+      <a href="index.html">
+  <img src="MusicGenrePics/1x/logo.png" class="sidebar-logo" alt="Logo">
+</a>
+      </h2>
+    
     <a data-i18n="nav1" class="nav" href="index.html"> Home</a>
     <a data-i18n="nav2" class="nav current_nav" href="favartists.html"> My Fav Artists</a>
     <a data-i18n="nav3" class="nav" href="songRecommendation.html"> Song Recommendations</a>
@@ -43,17 +49,16 @@
         </select>
       </div>
 
-      <div id="profile">👤</div>
     </div>
 
-    <div class="title"><span style="color: #1ED760;">My </span>Favourite Artists</div>
+    <div data-i18n="favartistTitle" class="title"><span style="color: #1ED760;">My </span>Favourite Artists</div>
 
 
     <div class="controls">
 
       <div id="search-container-wrapper">
         <div id="search-engine">
-          <input id="artistInput" placeholder="Search artist..." />
+          <input data-i18n="artisttInput" id="artistInput" placeholder="Search artist..." />
           <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
         </div>
 
@@ -87,8 +92,11 @@
         <div id="topTracks"></div>
       </div>
     </div>
-
+ <footer>
+        &copy; 2026 Twenty35 by thiha. All rights reserved.
+      </footer>
   </div>
+
 
 
   <script src="js/favartists.js"></script>
